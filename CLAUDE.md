@@ -145,6 +145,7 @@ HTTPS is automatic (Let's Encrypt via Vercel).
 
 Append meaningful changes here. Newest at top. Format: `YYYY-MM-DD — short description`.
 
+- **2026-05-14** — Dark-mode header treatment. Background → `var(--ink)` (#1C1816, matches the reference card's hero treatment); dropped the border-bottom (color contrast carries the divider). Swapped logo to `assets/logo-white.svg` (user-supplied, square viewBox), removed `mix-blend-mode: multiply` (no longer needed). Wired `assets/favicon.svg` (user-supplied) as the primary favicon with the existing PNG kept as fallback for browsers that don't support SVG icons (and as the apple-touch-icon).
 - **2026-05-14** — Switched sticky header background from `--paper` to `--paper-light` (#FAF7F0) — a faint elevation cue against the body cream. Added a square favicon (`assets/favicon.png`, 256×256, generated from `logo.jpg` via `sips`) and wired `<link rel="icon">` + `<link rel="apple-touch-icon">` into all 9 pages.
 - **2026-05-14** — Made girls' index blurbs describe the actual skills, matching the boys' wording. Coaching-framing differences (capability framing, PHV-aware language, retention focus) stay inside the deck pages, not in the index teasers.
 - **2026-05-14** — Centered the logo and removed the right-side `header-meta` text ("Coach Resources" / "Pre-Session Study" / "Lil' Shredders" / "Universal") on all 9 pages. Changed `.site-header-inner` from `justify-content: space-between` → `center`. The `.header-meta` CSS rule is now orphaned but harmless; left in for now.
