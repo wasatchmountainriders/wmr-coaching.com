@@ -80,6 +80,12 @@ _Things mentioned but not yet acted on. Trim when resolved._
 
 Static site, deployed to **Vercel** at the apex domain **wmr-coaching.com** (user owns the domain).
 
+- **GitHub repo:** [wasatchmountainriders/wmr-coaching.com](https://github.com/wasatchmountainriders/wmr-coaching.com) (public)
+- **Vercel project:** `wmr/wmr-coaching.com` ([dashboard](https://vercel.com/wmr/wmr-coaching.com))
+- **Vercel-issued URL** (works immediately): https://wmr-coachingcom.vercel.app
+- **Custom domain** (live once DNS propagates): https://wmr-coaching.com
+- Git-connected — every push to `main` auto-deploys to production; every PR gets a preview URL.
+
 ### How it's wired
 
 - `vercel.json` (workspace root) — Vercel config. Points `outputDirectory` at `initial_webpage_resources/` so that folder is served as the site root. No build step.
@@ -134,6 +140,7 @@ HTTPS is automatic (Let's Encrypt via Vercel).
 
 Append meaningful changes here. Newest at top. Format: `YYYY-MM-DD — short description`.
 
+- **2026-05-14** — First production deploy live at https://wmr-coachingcom.vercel.app. Created public GitHub repo [wasatchmountainriders/wmr-coaching.com](https://github.com/wasatchmountainriders/wmr-coaching.com), linked to Vercel project `wmr/wmr-coaching.com`, attached both `wmr-coaching.com` and `www.wmr-coaching.com` to the project. Custom domain awaits DNS at Squarespace (A record `@` and `www` → `76.76.21.21`).
 - **2026-05-14** — Wired up Vercel deploy for the public custom domain `wmr-coaching.com`. Added `vercel.json` (cleanUrls, security headers, CSP allowing inline styles/scripts + Google Fonts), `.vercelignore` (excludes `.md` files from deploy), `robots.txt`, and `sitemap.xml`. No HTML files touched.
 - **2026-05-14** — Rationale doc restored at [initial_webpage_resources/wmr_what_we_learned.md](initial_webpage_resources/wmr_what_we_learned.md). Backfilled content guardrails from it.
 - **2026-05-14** — Created `CLAUDE.md` for workspace-persistent context. Initial assets in [initial_webpage_resources/](initial_webpage_resources/): 7 program decks, universal reference, landing page, README.
