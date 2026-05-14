@@ -72,9 +72,28 @@ a:hover { text-decoration: underline; }
 
 /* ============ HEADER ============ */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   border-bottom: 1px solid var(--rule-soft);
-  padding: 1.25rem 0;
+  padding: 0.75rem 0;
   background: var(--paper);
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 640px) {
+  .logo { height: 32px; }
 }
 
 .site-header-inner {
@@ -433,11 +452,9 @@ em { font-style: italic; }
 
 <header class="site-header">
   <div class="site-header-inner">
-    <div class="wordmark">
-      <a href="index.html">Wasatch Mountain Riders</a>
-      <span class="wordmark-divider">/</span>
-      Reference
-    </div>
+    <a class="logo-link" href="index.html" aria-label="Wasatch Mountain Riders — home">
+      <img class="logo" src="assets/logo.jpg" alt="Wasatch Mountain Riders" width="68" height="40">
+    </a>
     <div class="header-meta">Universal</div>
   </div>
 </header>
