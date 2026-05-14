@@ -64,6 +64,7 @@ Source of truth for the *why* behind each rule: [initial_webpage_resources/wmr_w
 - **Flat pedals through Advanced.** No clipless in any deck. (Clipless creates bad bunny hop patterns; needs a separate parent conversation.)
 - **No doubles, gap jumps, wood drops, or step-ups in any deck.** Saved for high school NICA — out of scope here.
 - **Boys & girls (7+) share identical skills and identical drill names.** Differ only in coaching language (challenge framing vs capability framing). Don't introduce skill differences between gendered decks.
+- **Index-page card blurbs for gendered pairs must be identical.** Don't write girls cards as "same skill set as the boys' program" — it reads as derivative. Each gendered card describes the actual skills directly, same wording. Coaching-framing differences belong inside the deck, not on the front door.
 - **Drills marked with † appear in multiple decks on purpose** — same name, harder with age. Don't rename to disambiguate.
 - **Drill names describe what the kid is doing**, not what skill is taught ("Rolling Attack," not "Attack Position Drill"). Verb matches action.
 - **Coach demos are conditional.** "If you're confident, demo it. If not, walk it with them." Never frame demos as required.
