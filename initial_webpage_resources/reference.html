@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Universal Reference · Wasatch Mountain Riders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  color-scheme: light;
+
+  --paper: #F5F1E8;
+  --paper-light: #FAF7F0;
+  --paper-elev: #FBF8F1;
+  --ink: #1C1816;
+  --ink-soft: #3A332D;
+  --ink-secondary: #5C544A;
+  --ink-faded: #8B8275;
+  --rule: #C9C0AC;
+  --rule-soft: #DDD5C2;
+
+  --sienna: #B8543F;
+  --sienna-deep: #8B3E2D;
+  --sienna-pale: #F0DDD2;
+  --sienna-bg: #F8EBE2;
+  --stone: #EDE6D5;
+
+  --alert: #C0392B;
+  --alert-bg: #FBEAE6;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --content-max: 720px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 400;
+  font-variation-settings: "opsz" 14;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(107, 90, 71, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(107, 90, 71, 0.02) 0%, transparent 50%);
+}
+
+main, header { position: relative; z-index: 1; }
+
+a { color: var(--sienna); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============ HEADER ============ */
+.site-header {
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 1.25rem 0;
+  background: var(--paper);
+}
+
+.site-header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sienna-deep);
+  font-variation-settings: "opsz" 9, "SOFT" 0;
+}
+
+.wordmark a {
+  color: inherit;
+}
+
+.wordmark-divider { display: inline-block; margin: 0 0.75rem; color: var(--ink-faded); font-weight: 300; }
+
+.header-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.hero .container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after { content: ""; width: 2rem; height: 1px; background: var(--sienna); opacity: 0.5; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.0;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  color: var(--sienna);
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--ink-secondary);
+  font-variation-settings: "opsz" 18, "SOFT" 60;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ============ TABS ============ */
+.tab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 241, 232, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tab-bar-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0.5rem;
+}
+
+.tab-bar-inner::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: 1 0 auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1.125rem 1.5rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-faded);
+  letter-spacing: 0.01em;
+  font-variation-settings: "opsz" 14;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tab[aria-selected="true"] { color: var(--sienna); border-bottom-color: var(--sienna); }
+
+/* ============ ARTICLE / SECTION ============ */
+.content-area { max-width: var(--content-max); margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+
+.section-panel { display: none; }
+.section-panel.active { display: block; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.05;
+  color: var(--ink);
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 96, "SOFT" 60;
+}
+
+.section-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  font-variation-settings: "opsz" 36, "SOFT" 60;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.005em;
+}
+
+/* ============ SUB-SECTIONS ============ */
+.subsection {
+  margin-top: 3rem;
+}
+
+.subsection:first-of-type {
+  margin-top: 0;
+}
+
+.subsection-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--ink);
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.subsection-heading em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 36, "SOFT" 60;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.625rem;
+}
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+ul.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+ul.bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.65;
+}
+
+ul.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.65rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sienna);
+}
+
+ul.bullets li:last-child { margin-bottom: 0; }
+ul.bullets li strong { color: var(--ink); font-weight: 600; }
+
+strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+
+/* ============ CALLOUT BOXES ============ */
+.callout {
+  background: var(--paper-light);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--ink-soft);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.callout.alert {
+  background: var(--alert-bg);
+  border-left-color: var(--alert);
+}
+
+.callout.alert .callout-label {
+  color: var(--alert);
+}
+
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+
+/* ============ DECISION TREE ============ */
+.decision {
+  background: var(--paper-elev);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.decision-step {
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.decision-step:last-child { margin-bottom: 0; }
+
+.decision-step-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+  margin-right: 0.4rem;
+}
+
+/* ============ DIVIDER ============ */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--rule-soft);
+  margin: 3rem 0;
+}
+
+/* ============ BACK LINK ============ */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+  color: var(--ink-secondary);
+}
+
+.back-link:hover {
+  color: var(--sienna);
+  text-decoration: none;
+}
+
+/* ============ DISCLAIMER ============ */
+.disclaimer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--rule);
+  font-size: 0.875rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 14, "SOFT" 30;
+  line-height: 1.6;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .site-header-inner, .hero .container, .content-area {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .tab-bar-inner { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .tab { padding: 1rem 0.5rem 0.875rem; font-size: 0.85rem; }
+  .hero { padding: 2.5rem 0 2rem; }
+  .content-area { padding-top: 2.5rem; padding-bottom: 3rem; }
+  .section-lede { font-size: 1.125rem; }
+  .callout, .decision { padding: 1rem 1.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="wordmark">
+      <a href="index.html">Wasatch Mountain Riders</a>
+      <span class="wordmark-divider">/</span>
+      Reference
+    </div>
+    <div class="header-meta">Universal</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Read Once, Use Whenever</div>
+    <h1 class="hero-title">Universal <em>reference</em></h1>
+    <p class="hero-subtitle">Emergency procedures, common stuck moments, pre-ride readiness, and conduct standards. Applies across every program. Reference this when something goes sideways.</p>
+  </div>
+</section>
+
+<nav class="tab-bar" role="tablist">
+  <div class="tab-bar-inner">
+    <button class="tab" role="tab" aria-selected="true" data-panel="protocols">Protocols</button>
+    <button class="tab" role="tab" aria-selected="false" data-panel="stuck">Stuck</button>
+    <button class="tab" role="tab" aria-selected="false" data-panel="readiness">Readiness</button>
+    <button class="tab" role="tab" aria-selected="false" data-panel="standards">Standards</button>
+  </div>
+</nav>
+
+<main class="content-area">
+
+<!-- =================================================================
+     PROTOCOLS
+     ================================================================= -->
+<section class="section-panel active" data-panel="protocols">
+  <a class="back-link" href="index.html">← Back to coach resources</a>
+
+  <h1 class="section-title">When it <em>matters most</em></h1>
+  <p class="section-lede">Emergency and safety protocols. If you remember nothing else from this reference, remember this section. When in doubt, err on the side of caution every time.</p>
+
+  <!-- CRASH PROTOCOL -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Crash <em>protocol</em></h2>
+    <p>Crashes are categorized by severity. Use the level that fits the most serious symptom — never average down.</p>
+
+    <div class="callout">
+      <div class="callout-label">Level 1 · Minor</div>
+      <p><strong>Kid is up, walking, no obvious injury beyond scrapes or bruises.</strong></p>
+      <ul class="bullets">
+        <li>Ask three questions: <em>"Are you okay? Does anything hurt? Do you want to keep riding?"</em></li>
+        <li>Clean visible scrapes if you have wipes/water. Bandage if bleeding.</li>
+        <li>Watch them for the next 10 minutes. Delayed symptoms (dizziness, headache, nausea) escalate to Level 2.</li>
+        <li>Tell parents at pickup, regardless of severity. Every crash gets reported.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Level 2 · Moderate</div>
+      <p><strong>Sore, shaken, possible injury but not obviously severe. Crying. Reluctance to ride.</strong></p>
+      <ul class="bullets">
+        <li>Stop the ride for this kid. Move them to a safe spot off the trail.</li>
+        <li>Don't try to diagnose. You are not a medic.</li>
+        <li>Call parents immediately. Describe what happened factually.</li>
+        <li>Stay with the kid until parents arrive or they're cleared by a parent to continue.</li>
+        <li>Document: time, location, what happened, what was said. Notes to program director after.</li>
+      </ul>
+    </div>
+
+    <div class="callout alert">
+      <div class="callout-label">Level 3 · Serious — Call 911</div>
+      <p><strong>Don't move the kid. Don't remove their helmet. Don't give food or water.</strong></p>
+      <ul class="bullets">
+        <li>Heavy bleeding that doesn't stop with pressure</li>
+        <li>Loss of consciousness — any duration, no exceptions</li>
+        <li>Can't move a limb, or pain when trying to move</li>
+        <li>Head or neck pain after a crash</li>
+        <li>Trouble breathing</li>
+        <li>Confusion, slurred speech, vomiting after a head impact</li>
+        <li>Visible bone deformity</li>
+        <li>Seizure</li>
+      </ul>
+      <p><strong>Sequence:</strong> Call 911. Call program director. Call parents. Stay with the kid. Send another coach or older rider to flag down emergency responders at the trailhead.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HEAD INJURIES -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Head <em>injuries</em></h2>
+    <p>Head injuries are the highest-stakes call in coaching. The default is: <strong>when in doubt, ER.</strong> You are not equipped to assess concussions in the field. No one without medical training is.</p>
+
+    <p class="label">Always 911 / ER, no exceptions</p>
+    <ul class="bullets">
+      <li>Any loss of consciousness, even briefly</li>
+      <li>Vomiting after impact</li>
+      <li>Confusion, can't say their name or where they are</li>
+      <li>Severe or worsening headache</li>
+      <li>Seizure</li>
+      <li>Slurred speech or difficulty understanding speech</li>
+      <li>Unequal pupil sizes</li>
+      <li>Helmet shows visible cracks or major impact damage</li>
+    </ul>
+
+    <p class="label">Always tell parents, ER recommended</p>
+    <ul class="bullets">
+      <li>Hit head but seems fine</li>
+      <li>Helmet has minor impact marks</li>
+      <li>Headache or dizziness after the crash</li>
+      <li>Memory of the crash is foggy</li>
+      <li>"Just" hit their head — there is no "just" with head impacts</li>
+    </ul>
+
+    <p class="label">Always</p>
+    <ul class="bullets">
+      <li><strong>Replace the helmet</strong> after any meaningful impact. Modern helmets are engineered to absorb one impact and then be discarded.</li>
+      <li><strong>Document everything.</strong> Time, what happened, what symptoms appeared and when.</li>
+      <li><strong>Never let the kid continue riding</strong> after a head impact, even if they seem fine. Concussion symptoms can be delayed by hours.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WEATHER -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Weather <em>decisions</em></h2>
+
+    <p class="label">Lightning · The 30/30 rule</p>
+    <p>If you hear thunder within 30 seconds of seeing lightning, get to shelter immediately. Wait 30 minutes after the last clap of thunder before returning to the trail. <strong>Mountain lightning kills people every year in Utah.</strong> Don't risk it. Cancel sessions if thunderstorms are forecast.</p>
+
+    <p class="label">Heat</p>
+    <ul class="bullets">
+      <li><strong>Above 90°F:</strong> Shorten the session. Water breaks every 15 minutes. Stay in shade where possible.</li>
+      <li><strong>Above 95°F:</strong> Consider cancelling, especially for younger groups (Lil' Shredders, Beginners).</li>
+      <li><strong>Above 100°F:</strong> Cancel. The Utah League cancels at this temperature for a reason.</li>
+      <li><strong>Heat illness signs:</strong> headache, dizziness, nausea, stopped sweating, confusion. Stop activity immediately. Cool the kid down. Call parents. If symptoms severe, call 911.</li>
+    </ul>
+
+    <p class="label">Air quality · The AQI rule</p>
+    <p>Utah has bad smoke days, especially July–September. Check <a href="https://www.airnow.gov" target="_blank" rel="noopener">AirNow.gov</a> or the AirNow app before every session.</p>
+    <ul class="bullets">
+      <li><strong>AQI under 100:</strong> Ride as normal.</li>
+      <li><strong>AQI 100–150 (Unhealthy for Sensitive Groups):</strong> Shorten session. No max-effort riding. Kids with asthma sit out.</li>
+      <li><strong>AQI above 150:</strong> Cancel. The lung damage to a 7-year-old from one bad-air session is not worth one practice.</li>
+    </ul>
+
+    <p class="label">Cold and wet</p>
+    <p>Below 40°F with rain or snow, cancel for younger groups. Kids get hypothermic fast. Older groups (Intermediate, Advanced) can ride if properly dressed, but watch for shivering — first sign of trouble.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LOST RIDER -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Lost <em>rider</em></h2>
+    <p>Group rides on real trail mean kids sometimes get separated. Prevention is half-count-offs and a buddy system — but when it happens, you need a sequence.</p>
+
+    <div class="decision">
+      <div class="decision-step">
+        <span class="decision-step-num">0 min.</span>
+        Realize a rider is missing. Stop the entire group. <strong>Do not continue riding.</strong>
+      </div>
+      <div class="decision-step">
+        <span class="decision-step-num">2 min.</span>
+        Last person who saw them describes where, when, and condition. Designate one coach or older rider to backtrack to that point. The rest of the group stays put with the lead coach.
+      </div>
+      <div class="decision-step">
+        <span class="decision-step-num">10 min.</span>
+        Backtracker hasn't found them. Call the kid's phone if they have one. Call any other coaches in the area.
+      </div>
+      <div class="decision-step">
+        <span class="decision-step-num">15 min.</span>
+        Call parents. Tell them factually what's happening. Call the program director.
+      </div>
+      <div class="decision-step">
+        <span class="decision-step-num">30 min.</span>
+        Call 911. Search and Rescue takes time to mobilize — better to call early than late. Worst case, you cancel the SAR call when the kid turns up.
+      </div>
+    </div>
+
+    <p class="label">Prevention</p>
+    <ul class="bullets">
+      <li><strong>Buddy system</strong> from day one. Every kid has a buddy. They're responsible for noticing if their buddy stops.</li>
+      <li><strong>Count off</strong> at every trail junction. "Count off!" — every kid says their number in order.</li>
+      <li><strong>Sweep rider</strong> at the back. One coach or older rider always rides last. Nobody is behind the sweep.</li>
+      <li><strong>Regroup at junctions.</strong> Never split off onto a different trail without the full group present.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COMMS -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Communication <em>chain</em></h2>
+    <p>Know who to call before you need to call them. Save these numbers in your phone before the season starts.</p>
+
+    <ul class="bullets">
+      <li><strong>911</strong> — Any Level 3 emergency. Call first, ask questions second.</li>
+      <li><strong>Program director</strong> — Any Level 2 or Level 3 incident. Any kid-related concern you can't handle alone.</li>
+      <li><strong>Kid's parents</strong> — Every Level 2+ incident, every crash, every head impact, every missed pickup. Parents always get told.</li>
+      <li><strong>Other coaches</strong> — When you need backup, a lost-rider search party, or just a witness to something.</li>
+      <li><strong>Co-coach</strong> — For shift handoffs and decisions during the session.</li>
+    </ul>
+
+    <p class="label">What to know about your trail</p>
+    <p>Before the season starts, know:</p>
+    <ul class="bullets">
+      <li>Cell coverage situation on your usual trails — where do you have signal, where don't you?</li>
+      <li>Nearest hospital and the drive time</li>
+      <li>Trail name and trailhead address (so you can describe location to 911)</li>
+      <li>How to drop a pin or read coordinates on your phone</li>
+      <li>Where the nearest road access is for every section of trail you ride</li>
+    </ul>
+  </div>
+
+  <p class="disclaimer">This protocol section is operational guidance, not medical advice. Coaches are not medical professionals. When in doubt about any injury or condition, call 911 and let trained responders make the call. Liability lives in the gray zone between "probably fine" and "actually serious" — when you're in that gray zone, escalate.</p>
+</section>
+
+
+<!-- =================================================================
+     STUCK
+     ================================================================= -->
+<section class="section-panel" data-panel="stuck">
+  <a class="back-link" href="index.html">← Back to coach resources</a>
+
+  <h1 class="section-title">When you're <em>stuck</em></h1>
+  <p class="section-lede">The moments where coaching doesn't have a clear answer. What to do when a kid melts down, refuses to ride, gets scared, or behaves badly. These aren't rules — they're starting points.</p>
+
+  <!-- MELTDOWN -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>melting-down</em> kid</h2>
+    <p>Crying, can't talk, frozen, overwhelmed. Sometimes triggered by a crash. Sometimes by being tired, hungry, or socially overwhelmed. Sometimes by nothing visible at all.</p>
+
+    <p class="label">What to do</p>
+    <ul class="bullets">
+      <li><strong>Move them to a private spot.</strong> Off the trail, away from the group. Other kids staring makes it worse.</li>
+      <li><strong>Sit with them.</strong> Don't try to fix anything. Just be there.</li>
+      <li><strong>Don't ask "what's wrong?"</strong> They usually don't know. Ask: <em>"Do you need water? Food? A minute?"</em></li>
+      <li><strong>Wait.</strong> Most meltdowns at this age last 5-10 minutes. Don't rush it.</li>
+      <li><strong>Don't promise anything.</strong> No "we'll go home" or "you don't have to ride" promises. You don't have authority to make those calls.</li>
+      <li><strong>When they're calm enough to talk:</strong> ask <em>"what would help right now?"</em> Let them tell you.</li>
+    </ul>
+
+    <p class="label">When to escalate</p>
+    <ul class="bullets">
+      <li>Meltdown lasts more than 20 minutes</li>
+      <li>Kid says they want to go home</li>
+      <li>Something specific happened that needs parent input (a fight, a fall, something said)</li>
+      <li>You feel out of your depth</li>
+    </ul>
+    <p>Call parents. Call program director. Don't try to handle big emotional moments alone — there's no shame in needing backup.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WON'T RIDE -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>won't-ride</em> kid</h2>
+    <p>Refusing a specific feature, refusing to keep going, or refusing to ride at all. Important to distinguish: is this <em>can't</em> or <em>won't</em>?</p>
+
+    <p class="label">If it's a specific feature</p>
+    <ul class="bullets">
+      <li>Don't argue or pressure. Refusal is information.</li>
+      <li>Ask: <em>"What's stopping you?"</em> Sometimes it's fear. Sometimes it's a bike issue. Sometimes they're tired. Sometimes they don't trust the line.</li>
+      <li>Offer a smaller version. Walking the feature is always a valid option — and often the right one.</li>
+      <li>Don't shame them in front of the group. Other kids notice.</li>
+      <li>Try again next session. Skills come on the kid's timeline, not yours.</li>
+    </ul>
+
+    <p class="label">If it's the whole session</p>
+    <ul class="bullets">
+      <li>Sit with them. Find out what's happening.</li>
+      <li>Sometimes it's a bike issue (uncomfortable saddle, helmet too tight, hand pain).</li>
+      <li>Sometimes it's social (drama with another kid, feeling left out).</li>
+      <li>Sometimes it's home stuff that has nothing to do with bikes.</li>
+      <li>Sometimes they're tired or sick.</li>
+      <li>Sometimes they're just done for the day. That's okay.</li>
+      <li><strong>The kid who sits out one session and feels respected comes back next session. The kid who gets pressured doesn't.</strong></li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SCARED KID -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>scared</em> kid</h2>
+    <p>Fear is real and physical at this age. The instinct is to push through it — that instinct is wrong. Pushed-through-fear becomes lifelong avoidance.</p>
+
+    <p class="label">Reading the fear</p>
+    <ul class="bullets">
+      <li>Watch the body, not the words. Stiff shoulders, white knuckles, no breathing, voice that doesn't sound like their normal voice — those are real. "I'm fine" said with that body is not fine.</li>
+      <li>Quietly anxious looks different from loudly anxious. Quiet kids hide it. Watch them especially closely.</li>
+      <li>Boys often perform confidence to mask fear. Girls often perform fine to mask fear. Both are common.</li>
+    </ul>
+
+    <p class="label">What to do</p>
+    <ul class="bullets">
+      <li>Acknowledge it. <em>"This feels scary. That's normal. Let's figure out what to do."</em></li>
+      <li>Make the feature smaller. Way smaller. Way smaller than feels reasonable.</li>
+      <li>Walk it with them. Don't make them ride it.</li>
+      <li>Demo it if you can. Confident adults riding scary things removes some of the fear.</li>
+      <li>Build over weeks, not minutes. Confidence is a slow-cure adhesive.</li>
+    </ul>
+
+    <p class="label">What not to do</p>
+    <ul class="bullets">
+      <li>Don't pressure them to send it.</li>
+      <li>Don't compare them to other kids who did send it.</li>
+      <li>Don't say "you can do it" if they've said they can't — they know themselves better than you do in that moment.</li>
+      <li>Don't promise they'll be fine. You don't know that.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BULLYING -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Mean kid, <em>bullied kid</em></h2>
+    <p>It happens. Kids being cruel to each other. One kid pressuring another, mocking another, excluding another. Don't pretend it's not happening — and don't let it slide.</p>
+
+    <p class="label">In the moment</p>
+    <ul class="bullets">
+      <li><strong>Name it.</strong> "What you just said isn't okay. We don't talk to teammates that way."</li>
+      <li>Don't lecture. Don't shame in front of the group. Brief, clear, move on.</li>
+      <li>Check on the kid who was targeted. Privately. Ask if they're okay.</li>
+      <li>If it's a pattern, separate the kids in the group. Don't let them ride next to each other.</li>
+    </ul>
+
+    <p class="label">After the session</p>
+    <ul class="bullets">
+      <li>Tell the program director. Every time.</li>
+      <li>The mean kid's parents need to know. Program director makes that call.</li>
+      <li>Document what was said, by whom, when.</li>
+      <li>If it's serious or repeated — racial slurs, sexual content, threats — that's a different category. Immediate program director call. Possible removal from the program.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PARENT DISAGREEMENT -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Parent <em>disagreement</em></h2>
+    <p>A parent thinks their kid is ready for a feature you said no to. Or a parent thinks you pushed too hard. Or a parent wants you to handle something differently. These conversations happen.</p>
+
+    <p class="label">What to do in the moment</p>
+    <ul class="bullets">
+      <li><strong>Don't argue.</strong> Don't defend in detail.</li>
+      <li>Listen. Hear what they're saying.</li>
+      <li>Acknowledge their point: <em>"I hear you. That's a fair concern."</em></li>
+      <li>Be honest about your reasoning: <em>"Here's what I saw / here's why I made that call."</em></li>
+      <li>If you can't resolve it: <em>"Let me talk to the program director and circle back."</em></li>
+      <li>You are not required to win this argument. You are required to keep the kid safe and engaged.</li>
+    </ul>
+
+    <p class="label">What not to do</p>
+    <ul class="bullets">
+      <li>Don't promise to change your coaching approach without checking with the director.</li>
+      <li>Don't escalate the conversation. Parents are stressed; coaches are stressed; nothing good comes from heated.</li>
+      <li>Don't talk to the parent about another kid (e.g. "well their kid did this..."). Confidentiality.</li>
+      <li>Don't make safety calls based on parental pressure. If you said no to a feature for safety reasons, that stands.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ESCALATION -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>I-don't-know-what-to-do</em> moment</h2>
+    <p>Sometimes a situation lands and you genuinely don't know what to do. That's not a failure — it's information.</p>
+
+    <p class="label">In order</p>
+    <ul class="bullets">
+      <li><strong>Make sure everyone is physically safe.</strong> If you're unsure how to handle something, stop the activity first.</li>
+      <li><strong>Call the program director.</strong> If it's mid-session and urgent, call. That's what they're there for.</li>
+      <li><strong>Don't try to handle big things alone.</strong> "I'm in over my head" is a complete and respectable sentence.</li>
+      <li><strong>Document what happened.</strong> Notes after, while it's fresh.</li>
+      <li><strong>Debrief with another coach</strong> after. Not as a complaint session — as learning.</li>
+    </ul>
+
+    <p>The coaches who handle hard moments best are not the ones who never feel lost. They're the ones who recognize when they're lost and reach for help.</p>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     READINESS
+     ================================================================= -->
+<section class="section-panel" data-panel="readiness">
+  <a class="back-link" href="index.html">← Back to coach resources</a>
+
+  <h1 class="section-title">Pre-ride <em>readiness</em></h1>
+  <p class="section-lede">Before every session. The checklists that prevent half of all problems. Most preventable crashes trace back to something on this page that didn't get checked.</p>
+
+  <!-- M-CHECK -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>M-Check</em></h2>
+    <p>The bike inspection every kid's bike gets before every ride. Called M-Check because the path traces an M across the bike: front wheel up to handlebars, down to bottom bracket, up to seat, down to rear wheel.</p>
+
+    <p class="label">Front wheel</p>
+    <ul class="bullets">
+      <li>Quick-release or thru-axle tight? Try to wiggle the wheel side-to-side. Should not move.</li>
+      <li>Tire pressure — squeeze it. Should be firm but with some give. If it bounces back like a basketball, too hard. If it deforms easily, too soft.</li>
+      <li>Spin the wheel. Watch for wobble or rubbing.</li>
+    </ul>
+
+    <p class="label">Handlebars</p>
+    <ul class="bullets">
+      <li>Grips tight? Twist them. Should not rotate.</li>
+      <li>Brake levers reach properly? See note on brake reach below.</li>
+      <li>Stem tight? Stand in front of bike, hold front wheel between your knees, try to twist the bars. Should not move.</li>
+    </ul>
+
+    <p class="label">Brakes</p>
+    <ul class="bullets">
+      <li>Squeeze each lever — should feel firm, not spongy.</li>
+      <li>Brake pads have enough material — at least 1mm of pad visible.</li>
+      <li>Brake reach appropriate for the rider's hand. <strong>This fixes more "I can't stop" problems than anything else.</strong> Most levers have a small screw to adjust reach.</li>
+    </ul>
+
+    <p class="label">Bottom bracket / cranks</p>
+    <ul class="bullets">
+      <li>Grab cranks at 6 and 12 o'clock, try to pull them sideways. Should not move.</li>
+      <li>Chain — should look lubed, not dry or rusty.</li>
+    </ul>
+
+    <p class="label">Seat</p>
+    <ul class="bullets">
+      <li>Seat post tight? Try to twist the saddle. Should not rotate.</li>
+      <li>Saddle height appropriate for the kid? For most kids in our programs, both feet should reach the ground (at least toes) when sitting.</li>
+    </ul>
+
+    <p class="label">Rear wheel</p>
+    <ul class="bullets">
+      <li>Same checks as front wheel.</li>
+      <li>Shifts? Run through the gears (lift the rear wheel, spin the cranks, shift through each gear). All should engage.</li>
+    </ul>
+
+    <p>This takes 60-90 seconds per bike once you've done it 50 times. Don't skip it.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HELMET FIT -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Helmet <em>fit</em></h2>
+    <p>The 2-V-1 check. Every kid, every session. Helmets that don't fit don't protect.</p>
+
+    <p class="label">The 2</p>
+    <p><strong>Two fingers above the eyebrows.</strong> The helmet should sit low on the forehead, not pushed back like a baseball cap. Two finger-widths between the eyebrows and the front of the helmet.</p>
+
+    <p class="label">The V</p>
+    <p><strong>Straps form a V under each ear.</strong> Not in front of the ear, not behind. Right below.</p>
+
+    <p class="label">The 1</p>
+    <p><strong>One finger fits between chin strap and chin.</strong> Tight enough that the helmet doesn't move when you push it. Loose enough to slide one finger underneath.</p>
+
+    <p class="label">The shake test</p>
+    <p>Have the kid shake their head — vigorously. Helmet shouldn't slide around. If it does, retighten everything.</p>
+
+    <p class="label">Damaged helmets</p>
+    <p>Visible cracks, foam compressed in spots, straps frayed, buckle broken — replace. Foam helmets are one-impact devices. If the kid has crashed in the helmet, the helmet should be replaced even if it looks fine.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HYDRATION -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Hydration & <em>fuel</em></h2>
+
+    <p class="label">Water</p>
+    <ul class="bullets">
+      <li>Every kid arrives with a full water bottle. Check at start of session.</li>
+      <li>Water breaks every 20-30 minutes. More frequent in heat.</li>
+      <li>"I'm not thirsty" doesn't mean they're hydrated. Kids under-drink at this age. Make them drink.</li>
+      <li>Coach carries extra water — every session.</li>
+    </ul>
+
+    <p class="label">Snacks</p>
+    <ul class="bullets">
+      <li>For sessions over 90 minutes, snacks happen mid-session. Simple carbs are best (bananas, granola bars, fruit).</li>
+      <li>Coach carries emergency snacks — every session.</li>
+      <li>Watch for low blood sugar signs: irritability, fatigue, dizziness, sudden mood change. These usually mean they need food, not coaching.</li>
+    </ul>
+
+    <p class="label">Allergies</p>
+    <ul class="bullets">
+      <li>Know every kid's allergies before the season. Program director keeps the list.</li>
+      <li>Kids with severe allergies (nuts, bees, etc.) — carry their EpiPen if parents provide one. Know how to use it.</li>
+      <li>Don't share snacks across kids without checking allergies first.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HEAD COUNT -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Head <em>count</em></h2>
+
+    <ul class="bullets">
+      <li><strong>Count off at the start.</strong> Every kid says their number in order. You know exactly how many you have.</li>
+      <li><strong>Count off at every trail junction.</strong> Quick. Same order. Everyone says their number.</li>
+      <li><strong>Buddy system.</strong> Every kid has a buddy. If their buddy stops, they stop too.</li>
+      <li><strong>Sweep rider.</strong> One coach or older rider always at the back. Nobody behind the sweep.</li>
+      <li><strong>Regroup at junctions.</strong> Never let one part of the group take a different trail.</li>
+      <li><strong>Count off at the end.</strong> Before parents arrive. Confirm every kid is accounted for and uninjured.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COACH KIT -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Coach <em>kit</em></h2>
+    <p>What you bring to every session. Build this kit once, carry it in your pack every time.</p>
+
+    <p class="label">Medical / first aid</p>
+    <ul class="bullets">
+      <li>Basic first aid kit: bandages, gauze, medical tape, antiseptic wipes, sterile pads</li>
+      <li>Latex-free gloves (kids' parents may have latex allergies)</li>
+      <li>Cold pack (the kind you crack to activate)</li>
+      <li>Sun-screen for re-application</li>
+      <li>Any specific kid's EpiPen or emergency meds (with parent authorization)</li>
+    </ul>
+
+    <p class="label">Bike repair</p>
+    <ul class="bullets">
+      <li>Multi-tool with hex keys</li>
+      <li>Tire lever and patch kit or spare tube</li>
+      <li>Mini pump or CO2 inflator (and spare cartridges)</li>
+      <li>Chain quick-link in the size your kids' chains use</li>
+      <li>Zip ties (fix more than you'd think)</li>
+      <li>Duct tape (a small roll wrapped around the pump body)</li>
+    </ul>
+
+    <p class="label">Communication</p>
+    <ul class="bullets">
+      <li>Phone, fully charged. Backup battery if cell coverage is sketchy.</li>
+      <li>Whistle (loud, lightweight, packable)</li>
+      <li>Roster with every kid's name, parent phone numbers, and medical info</li>
+    </ul>
+
+    <p class="label">Other</p>
+    <ul class="bullets">
+      <li>Extra water</li>
+      <li>Emergency snacks (granola bars, fruit snacks)</li>
+      <li>Pen and small notebook (for documenting incidents in real time)</li>
+      <li>Garbage bag (for trash, or to rain-proof gear in a sudden storm)</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRE-RIDE BRIEFING -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Pre-ride <em>briefing</em></h2>
+    <p>The 60-second conversation you have with the group before riding starts. Same every session.</p>
+
+    <ul class="bullets">
+      <li><strong>Today's plan.</strong> "Today we're working on X. We'll ride Y trail. Pickup is at Z time."</li>
+      <li><strong>Group rules.</strong> "Buddy system. Count off at junctions. Sweep is [name]. Lead is me. No passing me without permission."</li>
+      <li><strong>Hand signals.</strong> Quick review: stop, slow, hazard call.</li>
+      <li><strong>If something goes wrong.</strong> "If anyone gets hurt or needs help, call STOPPING. Everyone stops. We deal with it."</li>
+      <li><strong>Conditions.</strong> "Today is hot / cold / wet / smoky — here's what we're doing differently."</li>
+      <li><strong>Ask:</strong> "Anyone hurt? Anyone tired? Anyone need anything before we start?"</li>
+    </ul>
+
+    <p>This briefing prevents 80% of in-session confusion. Boring is the goal.</p>
+  </div>
+</section>
+
+
+<!-- =================================================================
+     STANDARDS
+     ================================================================= -->
+<section class="section-panel" data-panel="standards">
+  <a class="back-link" href="index.html">← Back to coach resources</a>
+
+  <h1 class="section-title">WMR <em>standards</em></h1>
+  <p class="section-lede">Conduct expectations for coaches and kids. The rules that protect the program, the kids, and you. Read these before your first session. They're not negotiable.</p>
+
+  <!-- COACH CONDUCT -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Coach <em>conduct</em></h2>
+
+    <p class="label">The baseline</p>
+    <ul class="bullets">
+      <li>Show up on time. Every session.</li>
+      <li>Be the example you want the kids to be. They watch everything.</li>
+      <li>Be consistent. Same coach this session and next session.</li>
+      <li>No alcohol, no drugs, no vaping. Ever. Around kids or while on duty.</li>
+      <li>No swearing in front of kids — even when they swear first.</li>
+      <li>Wear program-appropriate clothes. Cover what needs covering. No clothing with offensive imagery or slogans.</li>
+      <li>Phone is for coaching tools, communication with parents and director, and emergencies. Not social media during sessions.</li>
+    </ul>
+
+    <p class="label">Language and tone</p>
+    <ul class="bullets">
+      <li>Don't yell, except for safety calls ("STOP!" "ROCK!" etc.)</li>
+      <li>Don't shame, mock, or sarcastically critique a kid — ever. Coaching is correction, not humiliation.</li>
+      <li>Don't compare kids to each other ("look at how X is doing it").</li>
+      <li>Praise specific behaviors, not general traits. "I noticed you kept your eyes up that whole descent" beats "good job!"</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BODIES -->
+  <div class="subsection">
+    <h2 class="subsection-heading">No comments <em>on bodies</em></h2>
+    <p>This is one of the most important rules. <strong>Coaches never comment on a kid's body.</strong></p>
+
+    <p class="label">Never</p>
+    <ul class="bullets">
+      <li>Weight ("you look like you've lost weight," "you're getting strong-looking")</li>
+      <li>Height ("you got tall!")</li>
+      <li>Body shape, size, or development of any kind</li>
+      <li>How clothes fit</li>
+      <li>Eating habits ("you haven't eaten today?" beyond hydration/fuel checking)</li>
+      <li>Anything about how they look</li>
+    </ul>
+
+    <p class="label">Always okay</p>
+    <ul class="bullets">
+      <li>Comments on their <strong>riding</strong>: bravery, skill, effort, technique, decisions, attitude.</li>
+      <li>"You committed to that line — that took guts."</li>
+      <li>"Your cornering looked smooth today."</li>
+      <li>"You picked the harder line and rode it clean."</li>
+    </ul>
+
+    <p>This rule is especially critical for girls — body comments at 9-12 are a documented driver of girls leaving sports. But it applies equally to boys. Comment on the riding. Always the riding.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ONE-ON-ONE -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>one-on-one</em> rule</h2>
+    <p>Coaches are never alone with a single kid in a private space. This is a SafeSport rule, a USA Cycling requirement, and a basic protection for both the kid and the coach.</p>
+
+    <p class="label">What this means in practice</p>
+    <ul class="bullets">
+      <li><strong>Never drive a kid in your car alone.</strong> Ever. No exceptions, even if a parent is late and the kid needs to get home.</li>
+      <li><strong>Never enter a bathroom or changing area with a kid alone.</strong> If a kid needs help in a bathroom, that's a parent's job. Wait outside.</li>
+      <li><strong>Never be alone in an enclosed space with a kid</strong> (a parked car, a closed room, a tent, etc.).</li>
+      <li><strong>Conversations are public.</strong> If you need to talk privately with a kid about something sensitive, stay within sight of other coaches or kids.</li>
+      <li><strong>No private messaging.</strong> Don't DM kids on social media. Communication with kids goes through parents.</li>
+    </ul>
+
+    <p class="label">If you find yourself alone with a kid</p>
+    <p>Move to where you're visible. Don't enter a private space. Tell another coach. Document it.</p>
+
+    <p>This rule isn't about distrusting coaches. It's about protecting everyone. Kids who feel pressured or unsafe sometimes misremember interactions. Coaches who follow the rule are protected from accusations they didn't earn. Everyone wins.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HANDS-OFF -->
+  <div class="subsection">
+    <h2 class="subsection-heading">The <em>hands-off</em> rule</h2>
+    <p>Default is no physical contact. Period. There are limited exceptions.</p>
+
+    <p class="label">When physical contact is okay</p>
+    <ul class="bullets">
+      <li><strong>High-fives or fist bumps</strong> — celebration. Kid-initiated or coach-offered, with the kid's consent.</li>
+      <li><strong>Adjusting a helmet or pads</strong> — with the kid's awareness and verbal consent ("can I tighten your helmet? It looks loose"). Done in view of others.</li>
+      <li><strong>Holding a saddle to help with balance</strong> on a specific drill — with the kid's awareness. Quick, public, instructional.</li>
+      <li><strong>Emergency response</strong> — first aid, helping after a crash, etc.</li>
+    </ul>
+
+    <p class="label">Never</p>
+    <ul class="bullets">
+      <li>Hugs.</li>
+      <li>Sitting on laps or pulling onto laps.</li>
+      <li>Touching the chest, hips, butt, or anywhere intimate.</li>
+      <li>Wrestling, roughhousing, "playful" tackling.</li>
+      <li>Tickling.</li>
+      <li>Any contact a parent watching would find weird.</li>
+    </ul>
+
+    <p>If a kid initiates a hug, redirect to a high-five or fist bump. "I'm so glad you had fun. Here, high-five." Don't make it a big deal — just redirect.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHOTOGRAPHY -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Photography & <em>social media</em></h2>
+
+    <p class="label">Photos of kids</p>
+    <ul class="bullets">
+      <li>Only with parent permission, in writing, before the season.</li>
+      <li>Program director keeps the list of which kids can be photographed and which can't.</li>
+      <li>Never solo photos. Always group shots.</li>
+      <li>Photos go to the program director, not to your personal phone collection.</li>
+      <li>If you take photos for the program, delete them from your personal device once they're shared with the program.</li>
+    </ul>
+
+    <p class="label">Social media</p>
+    <ul class="bullets">
+      <li>Don't post kids on your personal accounts. Ever.</li>
+      <li>WMR official channels post — coaches don't.</li>
+      <li>Don't tag kids' parents or families in your personal posts.</li>
+      <li>Don't friend or follow kids on social media. They're minors. You're staff.</li>
+      <li>If a kid follows you, you don't follow back.</li>
+    </ul>
+
+    <p class="label">If a parent asks for photos</p>
+    <p>Direct them to the program director. The director shares program photos with families through the official channel. You don't share photos directly with parents from your personal device.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KID BEHAVIOR -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Kid <em>behavior</em></h2>
+    <p>What we expect from the kids. Set the standard early in the season — kids rise to expectations.</p>
+
+    <p class="label">The basics</p>
+    <ul class="bullets">
+      <li>Show up on time, wearing what they need to ride.</li>
+      <li>Listen to coaches. Don't argue safety calls.</li>
+      <li>Respect teammates — no put-downs, no mocking, no exclusion.</li>
+      <li>No racing unless it's race day.</li>
+      <li>Trail etiquette — yield to uphill riders, stay on the trail, no littering.</li>
+      <li>Take care of your bike. Tell a coach if something's not working.</li>
+    </ul>
+
+    <p class="label">Three-strike framework</p>
+    <ul class="bullets">
+      <li><strong>First strike:</strong> brief, private correction. "Hey, that's not okay. Don't say that again." Move on.</li>
+      <li><strong>Second strike:</strong> longer conversation. Sit out part of the session. Parent notified at pickup.</li>
+      <li><strong>Third strike:</strong> program director gets involved. Possible removal from session or program.</li>
+    </ul>
+
+    <p>Some behaviors skip the framework and go straight to program director: racial slurs, sexual content, threats, deliberately harming another kid, vandalism. Those are zero-tolerance.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PARENT BOUNDARIES -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Parent <em>boundaries</em></h2>
+
+    <p class="label">What's coach's call</p>
+    <ul class="bullets">
+      <li>Which skills the kid is ready for</li>
+      <li>Which features the kid attempts</li>
+      <li>How the session is structured</li>
+      <li>Group composition and pairing</li>
+      <li>When to stop the session for weather, fatigue, or safety</li>
+    </ul>
+
+    <p class="label">What's parent's call</p>
+    <ul class="bullets">
+      <li>Whether the kid is in the program at all</li>
+      <li>Medical decisions</li>
+      <li>Whether the kid is ready to advance to the next program level</li>
+      <li>Anything happening outside the session</li>
+    </ul>
+
+    <p class="label">The gray zone</p>
+    <p>Sometimes a parent wants something the coach doesn't think is right — bigger features, more racing, less time on basics. Don't argue. Listen, acknowledge, and bring it to the program director. The director decides. You don't have to win every conversation.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REPORTING -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Reporting <em>concerns</em></h2>
+    <p>If you see something concerning — abuse, neglect, threats to self or others — you have an obligation to report.</p>
+
+    <p class="label">Always report to program director</p>
+    <ul class="bullets">
+      <li>A kid describes abuse, neglect, or unsafe conditions at home</li>
+      <li>A kid shows signs of physical abuse (unexplained injuries, bruises in patterns)</li>
+      <li>A kid talks about self-harm or suicide</li>
+      <li>A kid describes inappropriate behavior from any adult, including another WMR coach</li>
+      <li>You see something that doesn't feel right and you can't explain why</li>
+    </ul>
+
+    <p class="label">Mandated reporting in Utah</p>
+    <p>Utah law requires anyone with reason to believe a child has been abused or neglected to report to the Division of Child and Family Services or law enforcement. This applies to coaches, including teen coaches. The program director can help you make the report — but if the director is unavailable and the situation is urgent, you can call directly:</p>
+    <ul class="bullets">
+      <li><strong>Utah DCFS Child Protection Hotline:</strong> 1-855-323-3237 (24/7)</li>
+      <li><strong>If a child is in immediate danger:</strong> 911</li>
+    </ul>
+
+    <p>Reporting is not accusation. You don't have to be sure. You have to have reasonable cause to believe something is happening. Trained investigators take it from there.</p>
+
+    <p class="label">Confidentiality</p>
+    <p>Don't discuss reports with other coaches, kids, or parents. Tell the director and the appropriate authorities. That's it. Gossip in coaching staff destroys families and your program.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TRAINING -->
+  <div class="subsection">
+    <h2 class="subsection-heading">Required <em>training</em></h2>
+    <p>Coaches at WMR complete the following before working with kids:</p>
+
+    <ul class="bullets">
+      <li><strong>SafeSport training</strong> — required for all USA Cycling–affiliated coaches. Free online course covering abuse prevention, reporting, and safe interaction with athletes.</li>
+      <li><strong>Background check</strong> — completed through WMR before first session.</li>
+      <li><strong>Basic First Aid + CPR</strong> — strongly recommended, required for head coaches. WMR can help arrange.</li>
+      <li><strong>Concussion awareness training</strong> — free online (CDC HEADS UP) — required for all coaches.</li>
+      <li><strong>NICA OTB 101</strong> or equivalent on-the-bike training — strongly recommended. Free through Utah High School Cycling League.</li>
+    </ul>
+
+    <p>Skipping required training isn't optional. If you haven't completed it, talk to the program director before your first session.</p>
+  </div>
+
+  <p class="disclaimer">This standards section is operational guidance for WMR coaches. It does not constitute legal advice. Specific situations involving abuse reporting, mandated reporting obligations, or legal liability should be discussed with the program director and, where appropriate, qualified legal counsel. WMR follows USA Cycling, SafeSport, and Utah state guidelines for youth programs.</p>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.section-panel');
+
+  function activate(name) {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-panel') === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('active', p.getAttribute('data-panel') === name);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      activate(tab.getAttribute('data-panel'));
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    var active = document.querySelector('.tab[aria-selected="true"]');
+    if (!active) return;
+    var names = ['protocols', 'stuck', 'readiness', 'standards'];
+    var idx = names.indexOf(active.getAttribute('data-panel'));
+    if (e.key === 'ArrowRight' && idx < names.length - 1) { e.preventDefault(); activate(names[idx + 1]); }
+    if (e.key === 'ArrowLeft' && idx > 0) { e.preventDefault(); activate(names[idx - 1]); }
+  });
+})();
+</script>
+
+</body>
+</html>

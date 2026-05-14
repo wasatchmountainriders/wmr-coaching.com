@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Wasatch Mountain Riders · Coach Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  color-scheme: light;
+
+  --paper: #F5F1E8;
+  --paper-light: #FAF7F0;
+  --paper-elev: #FBF8F1;
+  --ink: #1C1816;
+  --ink-soft: #3A332D;
+  --ink-secondary: #5C544A;
+  --ink-faded: #8B8275;
+  --rule: #C9C0AC;
+  --rule-soft: #DDD5C2;
+
+  --sienna: #B8543F;
+  --sienna-deep: #8B3E2D;
+  --sienna-pale: #F0DDD2;
+  --sienna-bg: #F8EBE2;
+  --stone: #EDE6D5;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --content-max: 1080px;
+  --reading-max: 640px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-variation-settings: "opsz" 14;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(107, 90, 71, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(107, 90, 71, 0.02) 0%, transparent 50%);
+}
+
+main, header, section { position: relative; z-index: 1; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ============ HEADER ============ */
+.site-header {
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 1.25rem 0;
+  background: var(--paper);
+}
+
+.site-header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sienna-deep);
+  font-variation-settings: "opsz" 9, "SOFT" 0;
+}
+
+.header-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.hero .container {
+  max-width: var(--reading-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after { content: ""; width: 2rem; height: 1px; background: var(--sienna); opacity: 0.5; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1.0;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  color: var(--sienna);
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--ink-secondary);
+  font-variation-settings: "opsz" 18, "SOFT" 60;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ============ SECTION ============ */
+.section {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.section:last-of-type { border-bottom: none; }
+
+.section .container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.05;
+  color: var(--ink);
+  font-variation-settings: "opsz" 60, "SOFT" 30;
+  letter-spacing: -0.015em;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-heading em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 60, "SOFT" 60;
+}
+
+/* ============ TIER LABELS ============ */
+.tier-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--reading-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tier-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule-soft);
+}
+
+.tier-label:first-of-type {
+  margin-top: 0;
+}
+
+/* ============ PROGRAM GRID ============ */
+.program-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.program-grid.single {
+  max-width: var(--reading-max);
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr;
+}
+
+.program-grid.double {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 720px) {
+  .program-grid.double {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ PROGRAM CARD ============ */
+.program-card {
+  display: block;
+  background: var(--paper-light);
+  border: 1px solid var(--rule-soft);
+  border-radius: 6px;
+  padding: 1.75rem 2rem 2rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.program-card:hover {
+  border-color: var(--sienna);
+  background: var(--paper-elev);
+  transform: translateY(-2px);
+}
+
+.program-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+}
+
+.program-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.05;
+  color: var(--ink);
+  font-variation-settings: "opsz" 60, "SOFT" 30;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.875rem;
+}
+
+.program-title em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 60, "SOFT" 60;
+}
+
+.program-blurb {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.program-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+  color: var(--sienna);
+  transition: gap 0.2s ease;
+}
+
+.program-card:hover .program-link {
+  gap: 0.7rem;
+}
+
+/* ============ REFERENCE SECTION ============ */
+.reference-card {
+  display: block;
+  max-width: var(--reading-max);
+  margin: 0 auto;
+  background: var(--ink);
+  border-radius: 6px;
+  padding: 2.5rem 2.75rem;
+  color: var(--paper);
+  transition: transform 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.reference-card:hover {
+  background: var(--ink-soft);
+  transform: translateY(-2px);
+}
+
+.reference-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.reference-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  font-variation-settings: "opsz" 60, "SOFT" 30;
+  letter-spacing: -0.015em;
+  margin-bottom: 1rem;
+  color: var(--paper-light);
+}
+
+.reference-title em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 60, "SOFT" 60;
+}
+
+.reference-blurb {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #C9C0AC;
+  margin-bottom: 1.5rem;
+}
+
+.reference-card .program-link {
+  color: var(--sienna);
+}
+
+.reference-card:hover .program-link {
+  gap: 0.7rem;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.site-footer p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .site-header-inner, .hero .container, .section .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .hero { padding: 3rem 0 2.5rem; }
+  .section { padding: 3rem 0 2.5rem; }
+  .section-heading { margin-bottom: 2rem; }
+  .program-card { padding: 1.5rem 1.5rem 1.75rem; }
+  .program-title { font-size: 1.6rem; }
+  .reference-card { padding: 2rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="wordmark">Wasatch Mountain Riders</div>
+    <div class="header-meta">Coach Resources</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Pre-Season Study</div>
+    <h1 class="hero-title">Skill <em>cards</em></h1>
+    <p class="hero-subtitle">Seven program decks. Twelve skill cards each. One universal reference. Read before your season starts.</p>
+  </div>
+</section>
+
+<!-- SECTION 1: THE 7 PROGRAMS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-heading">The <em>seven programs</em></h2>
+
+    <div class="tier-label">Foundation</div>
+    <div class="program-grid single">
+      <a class="program-card" href="lil_shredders_skill_cards.html">
+        <div class="program-eyebrow">Program One · Ages 5–7</div>
+        <h3 class="program-title">Lil' <em>Shredders</em></h3>
+        <p class="program-blurb">First-time riders. Falling safely, ready position, stopping, looking ahead, slow-speed balance, gentle climbs and descents. Twelve cards covering the fundamentals — taught as games.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+    </div>
+
+    <div class="tier-label">Beginner</div>
+    <div class="program-grid double">
+      <a class="program-card" href="beginner_boys_skill_cards.html">
+        <div class="program-eyebrow">Program Two · Ages 7–9</div>
+        <h3 class="program-title">Beginner <em>Boys</em></h3>
+        <p class="program-blurb">Attack position, brake modulation, real cornering, pumping, front-wheel lift. The bridge from playing on bikes to mountain biking.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+      <a class="program-card" href="beginner_girls_skill_cards.html">
+        <div class="program-eyebrow">Program Three · Ages 7–9</div>
+        <h3 class="program-title">Beginner <em>Girls</em></h3>
+        <p class="program-blurb">Same skill set as the boys' program. Coaching framing built around capability and belonging from the first card.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+    </div>
+
+    <div class="tier-label">Intermediate</div>
+    <div class="program-grid double">
+      <a class="program-card" href="intermediate_boys_skill_cards.html">
+        <div class="program-eyebrow">Program Four · Ages 8–11</div>
+        <h3 class="program-title">Intermediate <em>Boys</em></h3>
+        <p class="program-blurb">Bike-body separation, switchbacks, technical climbing and descending, the American bunny hop, small drops, tabletops, line choice.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+      <a class="program-card" href="intermediate_girls_skill_cards.html">
+        <div class="program-eyebrow">Program Five · Ages 8–11</div>
+        <h3 class="program-title">Intermediate <em>Girls</em></h3>
+        <p class="program-blurb">Same skill set as the boys' program. Pro role models built into every card. PHV-aware coaching that names body changes matter-of-factly.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+    </div>
+
+    <div class="tier-label">Advanced</div>
+    <div class="program-grid double">
+      <a class="program-card" href="advanced_boys_skill_cards.html">
+        <div class="program-eyebrow">Program Six · Ages 9–12</div>
+        <h3 class="program-title">Advanced <em>Boys</em></h3>
+        <p class="program-blurb">Trail-braking, race-pace cornering, J-hop bunny hops, manuals, technical trails at speed. Race-day fundamentals. Risk assessment as a discipline.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+      <a class="program-card" href="advanced_girls_skill_cards.html">
+        <div class="program-eyebrow">Program Seven · Ages 9–12</div>
+        <h3 class="program-title">Advanced <em>Girls</em></h3>
+        <p class="program-blurb">Same skill set as the boys' program. Retention is the explicit goal. Keeping her riding for life is the measurement.</p>
+        <span class="program-link">Open deck →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: UNIVERSAL REFERENCE -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-heading">Universal <em>reference</em></h2>
+    <a class="reference-card" href="reference.html">
+      <div class="reference-eyebrow">Read once, use whenever</div>
+      <h3 class="reference-title">Protocols, Stuck, Readiness, <em>Standards</em></h3>
+      <p class="reference-blurb">Emergency procedures. What to do when a kid melts down. Pre-ride checklists. Conduct standards. Applies across every program — coaches reference this when something goes sideways.</p>
+      <span class="program-link">Open reference →</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Wasatch Mountain Riders · Coach Resources</p>
+</footer>
+
+</body>
+</html>

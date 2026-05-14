@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Intermediate Boys · Pre-Session Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  color-scheme: light;
+
+  --paper: #F5F1E8;
+  --paper-light: #FAF7F0;
+  --paper-elev: #FBF8F1;
+  --ink: #1C1816;
+  --ink-soft: #3A332D;
+  --ink-secondary: #5C544A;
+  --ink-faded: #8B8275;
+  --rule: #C9C0AC;
+  --rule-soft: #DDD5C2;
+
+  --sienna: #B8543F;
+  --sienna-deep: #8B3E2D;
+  --sienna-pale: #F0DDD2;
+  --sienna-bg: #F8EBE2;
+  --stone: #EDE6D5;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --content-max: 640px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 400;
+  font-variation-settings: "opsz" 14;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(107, 90, 71, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(107, 90, 71, 0.02) 0%, transparent 50%);
+}
+
+main, header { position: relative; z-index: 1; }
+
+.site-header {
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 1.25rem 0;
+  background: var(--paper);
+}
+
+.site-header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sienna-deep);
+  font-variation-settings: "opsz" 9, "SOFT" 0;
+}
+
+.wordmark-divider {
+  display: inline-block;
+  margin: 0 0.75rem;
+  color: var(--ink-faded);
+  font-weight: 300;
+}
+
+.header-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+}
+
+.hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.hero .container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--sienna);
+  opacity: 0.5;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.0;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  color: var(--sienna);
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--ink-secondary);
+  font-variation-settings: "opsz" 18, "SOFT" 60;
+  max-width: 30rem;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.tab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 241, 232, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tab-bar-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0.5rem;
+}
+
+.tab-bar-inner::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: 0 0 auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1.125rem 1rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-faded);
+  letter-spacing: 0.01em;
+  font-variation-settings: "opsz" 14;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tab-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.8rem;
+  font-variation-settings: "opsz" 9, "SOFT" 50;
+  color: var(--ink-faded);
+  font-weight: 400;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--sienna);
+  border-bottom-color: var(--sienna);
+}
+
+.tab[aria-selected="true"] .tab-num { color: var(--sienna); }
+
+.card-area {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.card { display: none; }
+.card.active { display: block; }
+
+.card-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.05;
+  color: var(--ink);
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+
+.card-title em {
+  font-style: italic;
+  color: var(--sienna);
+  font-variation-settings: "opsz" 96, "SOFT" 60;
+}
+
+.card-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  font-variation-settings: "opsz" 36, "SOFT" 60;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.005em;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  font-variation-settings: "opsz" 9;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+}
+
+.section-label:first-child { margin-top: 0; }
+
+.card p { margin-bottom: 1.125rem; }
+.card p:last-child { margin-bottom: 0; }
+
+.cue {
+  margin: 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--sienna-bg);
+  border-left: 3px solid var(--sienna);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  font-variation-settings: "opsz" 48, "SOFT" 60;
+  color: var(--sienna-deep);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  border-radius: 2px;
+}
+
+.cue::before { content: "\201C"; margin-right: 0.05em; }
+.cue::after { content: "\201D"; margin-left: 0.05em; }
+
+.drill {
+  background: var(--paper-light);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin: 0;
+}
+
+.drill ul { list-style: none; padding: 0; margin: 0; }
+
+.drill ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+
+.drill ul li:last-child { margin-bottom: 0; }
+
+.drill ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  top: 0.7rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sienna);
+}
+
+.drill p:last-child { margin-bottom: 0; }
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.65;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.65rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sienna);
+}
+
+.bullets li:last-child { margin-bottom: 0; }
+
+.bullets li strong { color: var(--ink); font-weight: 600; }
+
+.if-stuck {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--rule);
+}
+
+.if-stuck .section-label {
+  color: var(--sienna);
+  margin-top: 0;
+}
+
+.card em { font-style: italic; }
+.card strong { font-weight: 600; color: var(--ink); }
+
+.card-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-family: var(--font-display);
+  color: var(--ink-secondary);
+  transition: color 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+}
+
+.nav-btn.next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.nav-btn:hover:not(:disabled) { color: var(--sienna); }
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.nav-btn-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  font-weight: 600;
+  font-variation-settings: "opsz" 9;
+}
+
+.nav-btn-title {
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--ink-soft);
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+}
+
+.nav-btn:hover:not(:disabled) .nav-btn-title { color: var(--sienna); }
+
+@media (max-width: 640px) {
+  .site-header-inner, .hero .container, .card-area {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .tab-bar-inner {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .tab {
+    padding: 1rem 0.75rem 0.875rem;
+    font-size: 0.825rem;
+  }
+  .hero { padding: 2.5rem 0 2rem; }
+  .card-area { padding-top: 2.5rem; padding-bottom: 3rem; }
+  .cue { font-size: 1.2rem; padding: 1.25rem 1.4rem; }
+  .drill { padding: 1.25rem 1.4rem; }
+  .card-lede { font-size: 1.125rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="wordmark">
+      Wasatch Mountain Riders
+      <span class="wordmark-divider">/</span>
+      Skill Cards
+    </div>
+    <div class="header-meta">Pre-Session Study</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Program Four · Ages 8–11</div>
+    <h1 class="hero-title">Intermediate <em>Boys</em></h1>
+    <p class="hero-subtitle">Twelve skill cards covering the whole 10-week program. Read these before the season starts.</p>
+  </div>
+</section>
+
+<nav class="tab-bar" role="tablist">
+  <div class="tab-bar-inner">
+    <button class="tab" role="tab" aria-selected="true" data-card="01"><span class="tab-num">01</span>Attack, Refined</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="02"><span class="tab-num">02</span>Feathering</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="03"><span class="tab-num">03</span>Bike-Body Separation</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="04"><span class="tab-num">04</span>Corner at Speed</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="05"><span class="tab-num">05</span>Switchbacks</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="06"><span class="tab-num">06</span>Tech Climbing</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="07"><span class="tab-num">07</span>Tech Descending</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="08"><span class="tab-num">08</span>Bunny Hop</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="09"><span class="tab-num">09</span>Small Drops</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="10"><span class="tab-num">10</span>Pumping for Speed</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="11"><span class="tab-num">11</span>Tabletops</button>
+    <button class="tab" role="tab" aria-selected="false" data-card="12"><span class="tab-num">12</span>Line Choice</button>
+  </div>
+</nav>
+
+<main class="card-area">
+
+  <!-- CARD 01: ATTACK POSITION, REFINED -->
+  <article class="card active" data-card="01">
+    <div class="card-eyebrow">Card 01 · Refined Foundation</div>
+    <h1 class="card-title">Attack position, <em>refined</em></h1>
+
+    <p class="card-lede">Same position they learned at Beginner, now with the precision that makes everything else work. Full hip hinge, heavy feet, light hands, eyes scanning. This is the year it becomes automatic.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>At Beginner, attack position was something they had to think about. At Intermediate, it has to become the default — what their body does without being told. Every cornering, descending, drop, and jump skill in this deck assumes a fluent attack position. <strong>If a kid can't hold it through a full descent without breaking form, fix that first.</strong> Don't move on to the harder cards until this is solid.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Heavy feet, light hands, eyes up. Hold it the whole time.</p>
+
+    <h2 class="section-label">The drill — Attack Holds</h2>
+    <div class="drill">
+      <ul>
+        <li>Set up a 50-yard course on flat ground or a gentle slope.</li>
+        <li>They ride it in <strong>full attack position the entire length.</strong> No sitting down, no breaks.</li>
+        <li>You watch for: butt back, chest forward, heavy on the feet, light on the hands, eyes scanning ahead.</li>
+        <li>Any break in form = restart.</li>
+        <li>Progress: extend to 100 yards. Then add small bumps. Then a small descent.</li>
+        <li><strong>Pros do this for hours.</strong> Christopher Blevins, Haley Batten — they hold attack for 20-minute descents at race speed. That's the standard.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Full hip hinge — butt clearly back, chest forward</li>
+      <li>Weight clearly on feet, not hands (you can see daylight between their hands and the grips when they're light enough)</li>
+      <li>Elbows wide, not pinned in</li>
+      <li>Eyes scanning near-middle-far without prompting</li>
+      <li>Can hold it for 30+ seconds without form breaking</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Form decays after 10 seconds</strong> — strength or focus issue. Shorter holds, more reps. Build over weeks.</li>
+      <li><strong>Sits down between obstacles</strong> — habit from Beginner. Cue: <em>"Stay in attack the whole time. Real trails don't let you sit between rocks."</em></li>
+      <li><strong>Heavy hands, light feet (reversed)</strong> — common when scared. Cue: <em>"Push down through your feet. Pretend you're trying to push the pedals through the floor."</em></li>
+      <li><strong>Eyes lock forward, not scanning</strong> — staring, not seeing. Cue: <em>"Near-middle-far. Cycle your eyes."</em></li>
+      <li><strong>Growth spurt coordination dip</strong> — late-stage 11-year-olds may suddenly look worse at this. Don't panic. Their body just got bigger overnight. Give it 4-6 weeks.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid can't hold attack position cleanly, <strong>they're not ready for any other card in this deck.</strong> That's not a failure — it just means they need more reps at this. Run them through Beginner Card 01 drills (Rolling Attack) for two more sessions. Don't move on. Every advanced skill assumes this foundation, and trying to bunny hop without solid attack position is how kids get hurt.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" disabled><span class="nav-btn-label">Previous</span><span class="nav-btn-title">—</span></button>
+      <button class="nav-btn next" data-go="02"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Feathering →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 02: FEATHERING -->
+  <article class="card" data-card="02">
+    <div class="card-eyebrow">Card 02 · Real Brake Control</div>
+    <h1 class="card-title">Feathering & <em>threshold</em></h1>
+
+    <p class="card-lede">Beyond stopping, beyond modulation. Light continuous pressure on long descents. Hard squeeze right up to the edge of lockup. Trail-braking into corners. The brake skills that separate good riders from beginners.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>At Beginner, the goal was "squeeze, don't grab." At Intermediate, brakes become a tool for <em>managing speed in real time</em>, not just stopping. Feathering = light continuous pressure to scrub speed on a long descent. Threshold = finding the maximum braking power before the wheel locks. Trail-braking = staying on the brakes into a corner, then releasing at the apex. Real riders use all three. <strong>Demo all three yourself.</strong></p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Feather to manage. Threshold to slow hard. Release at the apex.</p>
+
+    <h2 class="section-label">The drill — Three-Stop Progression</h2>
+    <div class="drill">
+      <ul>
+        <li><strong>Drill 1 — Feathering:</strong> ride a 100-yard mild descent maintaining a constant slow speed. Both brakes lightly engaged the whole way. No coasting, no full stops. The skill is keeping the brakes <em>on</em> at low pressure.</li>
+        <li><strong>Drill 2 — Threshold:</strong> ride at moderate speed toward a stop line. Goal: hardest possible braking <em>without locking either wheel</em>. The line between max deceleration and skid. Each kid finds their own threshold over multiple reps.</li>
+        <li><strong>Drill 3 — Trail-braking:</strong> approach a marked corner. Brake into the entrance. Release brakes at the apex (the inside of the turn). Accelerate out. Forces eye discipline and timing together.</li>
+        <li><strong>Demo each one yourself</strong> before they try. Especially trail-braking — it's counterintuitive.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li><strong>Feathering:</strong> constant slow speed with brakes on, no jerky on/off</li>
+      <li><strong>Threshold:</strong> hard, controlled stop, no skid</li>
+      <li><strong>Trail-braking:</strong> brakes on into the corner, off at the apex, accelerate out</li>
+      <li>Smooth, controlled, no surprises</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Releases brakes between feathering pulses</strong> — pulses, not feathering. Cue: <em>"Keep them on. Constant pressure. Like a dimmer switch, not a light switch."</em></li>
+      <li><strong>Locks rear wheel on threshold</strong> — squeezing rear too hard. Cue: <em>"Front does most of the work. Back is for control."</em></li>
+      <li><strong>Releases brakes too early in trail-braking</strong> — exits the corner too fast, blows the line. Cue: <em>"Brakes on until you see the exit."</em></li>
+      <li><strong>Won't trail-brake because it feels wrong</strong> — fine. Counterintuitive at first. Demo it slow. Then have them try it at very low speed before adding speed.</li>
+      <li><strong>Boys showing off by skidding</strong> — at this age it's still tempting. Redirect: <em>"Anyone can skid. The skill is stopping that hard <em>without</em> skidding. Show me that."</em></li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>Trail-braking is the hardest of the three. If a kid can't get it, drop it for now — feathering and threshold are more foundational. Come back to trail-braking in week 6 or 7 once their cornering is more confident. Don't rush it. Pushing trail-braking on a kid who isn't ready creates timid corner entries and washed-out front wheels.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="01"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Attack, Refined</span></button>
+      <button class="nav-btn next" data-go="03"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Bike-Body Separation →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 03: BIKE-BODY SEPARATION -->
+  <article class="card" data-card="03">
+    <div class="card-eyebrow">Card 03 · The Mechanical Unlock</div>
+    <h1 class="card-title">Lateral <em>bike-body separation</em></h1>
+
+    <p class="card-lede">The bike leans. The body stays upright. The single concept that unlocks every advanced cornering and steep-descent skill. Hard to teach, magic when it clicks.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Watch any World Cup XC rider corner. The bike is laid over at 30+ degrees. The rider's body is barely tilted. That's bike-body separation. The bike does the leaning; the rider stays balanced over the contact patch. At Beginner, the bike and body leaned together. At Intermediate, they need to start moving independently — the bike goes where it needs to, the body stays where <em>it</em> needs to. This is the skill that makes hard cornering, off-camber riding, and steep descents possible.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Lean the bike, not your body. Push the bars away from you.</p>
+
+    <h2 class="section-label">The drill — Bar Push Drill</h2>
+    <div class="drill">
+      <ul>
+        <li>Flat ground. Slow speed (walking pace at first).</li>
+        <li>In attack position, ride a slalom around 4-5 cones.</li>
+        <li>At each cone: <strong>push the bars to one side while keeping your body centered over the bike.</strong> Bike leans, body stays upright.</li>
+        <li>The motion: extended outside arm pushes the bar away; inside arm bends and pulls.</li>
+        <li>Eyes look <em>through</em> each cone, not at it.</li>
+        <li><strong>Demo it slow and exaggerated</strong> before they try. They need to see the bike at a clear angle while your shoulders stay level.</li>
+        <li>Progress: tighter cones, more speed, then take it onto a real trail.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Clear angle between bike and body — bike leans more</li>
+      <li>Outside arm extended, pushing bars down and out</li>
+      <li>Body stays roughly centered over the contact patch</li>
+      <li>Shoulders level-ish (not tilted with the bike)</li>
+      <li>Eyes through the turn</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Body leans with the bike (motorcycle-style)</strong> — old habit. Works at low speed but fails on hard cornering or off-camber. Cue: <em>"Push the bars away. Keep your head over the bike."</em></li>
+      <li><strong>Bike stays upright, body leans</strong> — the reverse. They're tilting their body trying to "feel" the turn. Cue: <em>"Bike leans more than you do. Watch me."</em></li>
+      <li><strong>Stiff arms, no push</strong> — they think it's a lean, not an active push. Cue: <em>"Punch the inside grip down into the ground."</em></li>
+      <li><strong>Looks ridiculous and they hate it</strong> — bike-body separation looks weird the first 20 times. Cue: <em>"This is what the pros look like. I promise. Watch a Christopher Blevins corner video tonight."</em></li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>Take it off the bike. Have them stand on the ground holding the handlebars while the bike is upright. Tell them to <strong>push the bars to one side while keeping their hips and shoulders pointed straight ahead.</strong> They feel the separation instantly when the bike is at a 20-degree lean and their body is still vertical. Then put them back on at walking pace and ask for the same motion. Once they feel it standing still, they can feel it rolling.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="02"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Feathering</span></button>
+      <button class="nav-btn next" data-go="04"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Corner at Speed →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 04: CORNERING AT SPEED -->
+  <article class="card" data-card="04">
+    <div class="card-eyebrow">Card 04 · Carrying Speed</div>
+    <h1 class="card-title">Cornering at <em>speed</em></h1>
+
+    <p class="card-lede">Real cornering. Outside foot AND outside knee weighted. Inside elbow dropped. Bike-body separation. Pre-turn entry. The corner the kid will use for the rest of their riding life.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Cornering is the single highest-leverage XC skill. A kid who corners well will be faster than a stronger kid who corners badly. Every Intermediate skill compounds here — attack position, feathering, bike-body separation. This is where it all comes together. <strong>Demo your corners.</strong> Boys this age will copy what they see — give them something worth copying.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Outside foot heavy, inside elbow down, eyes through the exit.</p>
+
+    <h2 class="section-label">The drill — Carve & Exit</h2>
+    <div class="drill">
+      <ul>
+        <li>Set up a marked corner on hard-packed dirt or pavement. Cones in, cones out, clear apex.</li>
+        <li><strong>Before the corner:</strong> attack position, gear pre-selected, eyes on the apex.</li>
+        <li><strong>Entering:</strong> outside pedal down and weighted hard. Inside elbow drops. Bars push away (separation).</li>
+        <li><strong>At the apex:</strong> eyes shift to the exit. Brakes release if you were trail-braking.</li>
+        <li><strong>Exiting:</strong> body comes back over center, drive the pedal stroke, accelerate.</li>
+        <li>Run it 8-10 times per side. Then run a connected sequence — corner, straight, corner.</li>
+        <li><strong>Build to:</strong> "Same corner, take 5 mph more next try. Then 5 mph more after that. Find the limit."</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Outside foot heavily weighted — you can see the bike pressing down on that side</li>
+      <li>Inside elbow noticeably dropped</li>
+      <li>Bike-body separation visible</li>
+      <li>Eyes already at the exit by the apex</li>
+      <li>Accelerating coming out, not pedaling tentatively</li>
+      <li>Smooth arc, no jerks or corrections</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Eyes lock on the inside of the corner</strong> — bike follows eyes, runs wide. Cue: <em>"Eyes at the exit before you hit the apex."</em></li>
+      <li><strong>Inside foot down</strong> — regression from Beginner. Cue: <em>"Outside foot. Always."</em></li>
+      <li><strong>Body and bike lean together</strong> — old motorcycle-lean habit. See Card 03.</li>
+      <li><strong>Brakes still on through the apex</strong> — kills exit speed. Cue: <em>"Brakes off at the apex. Accelerate out."</em></li>
+      <li><strong>Sends it too fast and washes out</strong> — boys this age will try the corner faster than they can handle. Front wheel washes, they go down. <strong>Don't shame the crash, but back it off.</strong> Cue: <em>"Build the speed gradually. Pros add 1 mph at a time, not 10."</em></li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>Most cornering problems at this age trace back to <strong>where the eyes are.</strong> If a kid is washing out, slowing too much, or running wide — first check the eyes. Stand at the exit of the corner. Tell them to <strong>look at you</strong> the entire corner. Don't say anything about feet, elbows, or lean. Just eyes. You'll see the body figure out the rest within 2-3 reps. The eyes lead and the bike follows.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="03"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Bike-Body Separation</span></button>
+      <button class="nav-btn next" data-go="05"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Switchbacks →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 05: SWITCHBACKS -->
+  <article class="card" data-card="05">
+    <div class="card-eyebrow">Card 05 · Tight Turns</div>
+    <h1 class="card-title"><em>Switchback</em> cornering</h1>
+
+    <p class="card-lede">Tight low-speed turns — 180 degrees in 3 feet. Combines slow-balance, eye discipline, and proper cornering. The skill kids hate at first and brag about later.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Real mountain biking has switchbacks. Tight ones. Climbing and descending. A kid who can clean a switchback can ride almost any trail in Utah. A kid who can't will walk every tight turn. Switchbacks demand <em>everything</em> at once — slow-speed balance, full body separation, eyes way ahead, perfect foot position. They're hard. That's why they're worth practicing.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Look at the exit before you start the turn. Slow is fast.</p>
+
+    <h2 class="section-label">The drill — Cone Switchback</h2>
+    <div class="drill">
+      <ul>
+        <li>Set up a tight U-turn with cones — 4-foot diameter to start, tightening over weeks.</li>
+        <li><strong>Climbing switchback:</strong> attack position, low speed, outside foot down, eyes at the exit (the next straight). Ratcheting pedals if needed to avoid pedal strikes.</li>
+        <li><strong>Descending switchback:</strong> attack position, brakes feathering, outside foot down, eyes at the exit. The body separates HARD from the bike here — bike points one way, head and shoulders already pointing the other.</li>
+        <li>Demo both directions. Especially the eye position.</li>
+        <li>Progress: tighter cones, then put the switchback on a slight slope, then on a real trail.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Eyes pointed at the exit before the bike has even started turning</li>
+      <li>Outside foot weighted hard</li>
+      <li>Body clearly separated from the bike — head pointing toward exit while bike is still mid-turn</li>
+      <li>Smooth, no foot dabs, no walking</li>
+      <li>Can clean it both directions (most kids will have a strong side and a weak side)</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Eyes follow the front wheel through the turn</strong> — bike runs wide and falls off the outside. Cue: <em>"Eyes at the exit BEFORE you turn the bars."</em></li>
+      <li><strong>Goes too fast and runs out of room</strong> — common in boys. Switchbacks reward slow, not fast. Cue: <em>"Slow is fast here. The faster you go, the wider you turn."</em></li>
+      <li><strong>Pedal strike mid-turn</strong> — outside foot wasn't down, or pedaling through the apex. Cue: <em>"Outside foot down. Ratchet, don't pedal."</em></li>
+      <li><strong>Foot dab to "save it"</strong> — fine the first few times. Don't shame. Just reset and try again. Switchbacks take dozens of reps.</li>
+      <li><strong>Refuses to try it on a descent</strong> — too scary. Practice on flat ground until the motor pattern is solid. Then a very gentle descent. Build over weeks.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>Walk the switchback with the bike first. Have them push it through the turn on foot, getting their feet exactly where they'd be on the bike. Then ride it at walking pace. Then add momentum. <strong>The motor pattern is identical to a regular tight corner — just slower and more compressed.</strong> If they can do a Carve & Exit at 5 mph, they can do a switchback at 2 mph. It's the same skill, just amplified.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="04"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Corner at Speed</span></button>
+      <button class="nav-btn next" data-go="06"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Tech Climbing →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 06: TECHNICAL CLIMBING -->
+  <article class="card" data-card="06">
+    <div class="card-eyebrow">Card 06 · Climbing Real Trails</div>
+    <h1 class="card-title">Technical <em>climbing</em></h1>
+
+    <p class="card-lede">Climbing over roots, rocks, and ledges. Ratcheting under load. Reading the climb ahead. The skill that separates kids who ride trails from kids who ride dirt roads.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Beginner climbing was about smooth-pedaling up a clean hill. Intermediate climbing happens on real trails — with roots, rocks, and switchbacks. The bike fights you. You need to read terrain, pre-shift, ratchet, weight the front wheel forward on steep stuff, and pick lines. This is where boys this age start to feel like real mountain bikers.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Weight forward, easy gear, ratchet through the chunk.</p>
+
+    <h2 class="section-label">The drill — Climb Reading</h2>
+    <div class="drill">
+      <ul>
+        <li>Find a short technical climb with 2-3 features (roots, rocks, a small ledge).</li>
+        <li><strong>Walk it first.</strong> Identify the features. Discuss the line. Where does each kid pre-shift? Where does each kid ratchet?</li>
+        <li>Ride it: weight slightly forward (chest closer to bars) to keep the front wheel down on steep sections.</li>
+        <li>Ratchet through chunky sections — quarter-stroke forward, quarter back, quarter forward. Keeps the bike moving without pedal strikes.</li>
+        <li>Eyes 10-15 feet ahead, picking the line before getting there.</li>
+        <li>Run it 3-4 times each. After each rider's run, ask: <em>"What worked? What didn't?"</em> Let them coach themselves.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Pre-shifted to the right gear BEFORE the technical section</li>
+      <li>Chest forward, front wheel staying down on steep sections</li>
+      <li>Ratcheting visible when terrain demands it</li>
+      <li>Eyes scanning ahead, picking the line</li>
+      <li>Cleaned the climb without dabbing</li>
+      <li>Can describe what they did right when asked</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Front wheel lifts on steep section</strong> — weight too far back. Cue: <em>"Chest down. Nose over the stem on steep stuff."</em></li>
+      <li><strong>Pedal strikes a rock mid-climb</strong> — full pedal stroke when ratcheting was needed. Cue: <em>"Half-pedals through chunk."</em></li>
+      <li><strong>Stalls at the bottom of a feature</strong> — wrong gear, no momentum. Cue: <em>"Pre-shift. Carry speed into it."</em></li>
+      <li><strong>Stands up on the climb and rocks the bike</strong> — wastes traction. Cue: <em>"Sit. Steady spin. Stand only if you have to."</em></li>
+      <li><strong>Quits when it gets hard</strong> — sometimes the climb really is too hard, sometimes it's a mental block. Have them walk the rest with you, then try again next session with a clearer plan.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid keeps failing the same climb, <strong>break it into sections.</strong> Have them ride from the bottom to the first feature, dab, reset, then ride from there to the second feature, dab, reset. Once they can clean each section individually, link two sections, then three. Most "I can't climb this" is actually "I haven't broken this into manageable pieces." The whole climb is just sections that have been linked.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="05"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Switchbacks</span></button>
+      <button class="nav-btn next" data-go="07"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Tech Descending →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 07: TECHNICAL DESCENDING -->
+  <article class="card" data-card="07">
+    <div class="card-eyebrow">Card 07 · Descending Real Trails</div>
+    <h1 class="card-title">Technical <em>descending</em></h1>
+
+    <p class="card-lede">Committed attack position on real terrain. Brake-release at the apex. Line scanning at speed. Reading chunk ahead. The skill that turns descents from scary to electric.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>This is where boys this age either fall in love with mountain biking or start avoiding hard trails. The difference is technique. A kid in solid attack position with good vision can ride descents that look terrifying. A kid sitting on the saddle, gripping the brakes, staring at the front wheel will crash on the same terrain. <strong>Demo every descent yourself first.</strong> Especially the scarier ones. Seeing it done removes half the fear.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Heavy feet, light hands, eyes far ahead. Let the bike work.</p>
+
+    <h2 class="section-label">The drill — Tech Descent Progression</h2>
+    <div class="drill">
+      <ul>
+        <li>Find a descent with progressively more technical features — start mellow, then chunk, then a small drop or step-down.</li>
+        <li><strong>Walk it first</strong> with the group. Identify features. Discuss lines. Where do you brake? Where do you release?</li>
+        <li>Ride it: full attack position from before the descent starts. Brakes covered, feathering on the smooth parts.</li>
+        <li>At the chunky parts: <strong>let off the brakes</strong>. Counterintuitive but correct — braking on chunk locks the suspension and bounces the bike around. Let it roll, let the suspension work.</li>
+        <li>Eyes 15-20+ feet ahead, picking lines.</li>
+        <li>Run it 3-4 times. Each lap, push the line choice toward harder options.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Locked into attack position from the start of the descent</li>
+      <li>Eyes far ahead, scanning</li>
+      <li>Feathering brakes on smooth sections, releasing on chunky sections</li>
+      <li>Bike feels alive underneath them — suspension working, not locked</li>
+      <li>Wants to do it again, faster</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Sitting down through the descent</strong> — every bump becomes a hit. Cue: <em>"Stand the whole way down. Knees absorb."</em></li>
+      <li><strong>Death grip on the brakes through chunk</strong> — locks the suspension, gets bounced harder. Cue: <em>"Let off through the rocks. The bike wants to roll."</em></li>
+      <li><strong>Eyes locked 5 feet ahead</strong> — reacting, not anticipating. Cue: <em>"Look further. Where do you want to be in 3 seconds?"</em></li>
+      <li><strong>Sends a feature he's not ready for</strong> — bravado overriding judgment. <strong>Don't let it happen.</strong> If you're not sure he can ride a feature, walk it with him. Stop the group. Make the call.</li>
+      <li><strong>Fake confidence to look cool</strong> — pretends he's fine, then crashes on something. Watch for it. The quiet "yeah, no, I got it" without conviction is the tell. Ask directly: <em>"Show me you can do this slow first. Then we add speed."</em></li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid is too scared to descend something cleanly, find a less technical version of the same descent. Build them up over weeks, not minutes. <strong>Boys this age will sometimes lie about being scared to look tough in front of peers.</strong> Watch their body language more than their words. Stiff shoulders, white knuckles, no breathing — all signs. Pull them aside, ride it together at the back of the group, no audience. Confidence built privately stays built. Confidence forced in front of peers crashes.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="06"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Tech Climbing</span></button>
+      <button class="nav-btn next" data-go="08"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Bunny Hop →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 08: BUNNY HOP -->
+  <article class="card" data-card="08">
+    <div class="card-eyebrow">Card 08 · Both Wheels Off</div>
+    <h1 class="card-title">American <em>bunny hop</em></h1>
+
+    <p class="card-lede">Lift the front wheel, then the rear wheel. Both wheels off the ground. The skill they've been waiting for since Beginner. Flat pedals only — never teach this clipped in.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Front-wheel lift was the first half. Now they add the second half — pulling the rear wheel up after the front. The full bunny hop. On flat pedals, this requires proper technique (push-pull, weight shift, foot scoop) — which is why we ONLY teach it on flats. Kids who learn bunny hops on clipless pedals never develop the real technique; they just yank the bike up with their feet. <strong>That's a known bad pattern that holds riders back for years.</strong> Flat pedals only.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Front wheel up. Then push the bars forward and scoop your feet back.</p>
+
+    <h2 class="section-label">The drill — Hop the Stick</h2>
+    <div class="drill">
+      <ul>
+        <li>Place a stick (1-inch diameter, 18 inches long) flat on the ground.</li>
+        <li><strong>Phase 1 (review):</strong> front wheel lift over the stick — should be solid from Beginner. If not, go back to Beginner Card 10 for a week.</li>
+        <li><strong>Phase 2 (new):</strong> after lifting the front wheel, <strong>push the bars forward</strong> (bars go away from the body, level out). At the same time, <strong>scoop the feet back and up</strong> — like trying to drag the pedals up behind you.</li>
+        <li>Goal: both wheels off the ground, even an inch counts.</li>
+        <li>Land both wheels at the same time, slightly off the ground = perfect.</li>
+        <li>Drill it 50+ times per session. Repetition is everything. The motor pattern is unfamiliar at first.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Front wheel lifts cleanly first</li>
+      <li>Bars push forward, leveling out</li>
+      <li>Feet scoop back, rear wheel comes up</li>
+      <li>Both wheels off the ground (even briefly)</li>
+      <li>Lands smoothly, both wheels close to together</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Front wheel lifts, rear wheel stays planted</strong> — no second motion. Cue: <em>"Two movements. Front up first, then rear up."</em></li>
+      <li><strong>Both wheels yanked up at once</strong> — that's not a bunny hop, that's a jump-on-the-pedals. Cue: <em>"Front first, then rear. Two beats."</em></li>
+      <li><strong>Lands rear wheel first (rear too high)</strong> — over-scooped. Cue: <em>"Less scoop. Just unweight the rear."</em></li>
+      <li><strong>Lands front wheel hard, rear wheel barely moved</strong> — gave up on the second motion. Cue: <em>"Commit to both motions. Push and scoop."</em></li>
+      <li><strong>Frustration spiral</strong> — boys this age can get really mad when bunny hops don't click. Move on. Come back next session. It takes weeks.</li>
+      <li><strong>Trying it clipped in</strong> — NO. Take them off the clips. Flat pedals only for this skill.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>The rear wheel lift is the hard part. Two ways to teach it isolated:</p>
+      <p><strong>1. From a stop:</strong> bike stationary, feet on flats. Crouch down, then explode up, scooping the feet back and up. Rear wheel pops off the ground (front stays planted). Do it 20 times. Once they feel the scoop, integrate with the front wheel lift.</p>
+      <p><strong>2. The "jump rope" cue:</strong> imagine jumping over a jump rope while holding the bars. Your feet pull up. Same motion for the rear wheel hop. Sometimes boys this age get it from this metaphor when nothing else lands.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="07"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Tech Descending</span></button>
+      <button class="nav-btn next" data-go="09"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Small Drops →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 09: SMALL DROPS -->
+  <article class="card" data-card="09">
+    <div class="card-eyebrow">Card 09 · First Airtime</div>
+    <h1 class="card-title">Small <em>drops</em></h1>
+
+    <p class="card-lede">Rollable drops first, then small committed two-wheel drops. Push the bike forward, match the landing angle, land both wheels. The skill that opens up trail features kids have been avoiding. Size is decided by the coach based on the rider — never a fixed number.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Most beginner trails have small drops — a curb-height ledge, a rock with a 6-inch face, a step-down. Kids who haven't learned drops walk every one of them. Kids who have ride right through. The skill itself isn't that hard once they have attack position and a bunny hop foundation. The hard part is the mental commitment to ride <em>off</em> something. <strong>Demo every drop yourself first. Show them it's nothing.</strong></p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Push the bars forward. Match the landing. Both wheels together.</p>
+
+    <h2 class="section-label">The drill — Drop Progression</h2>
+    <div class="drill">
+      <ul>
+        <li><strong>Week 1-2: Rollable drops</strong>. Find a small ledge with a sloped landing. Roll off it in attack position. Both wheels stay on the ground the whole time. Build comfort with the sensation of dropping.</li>
+        <li><strong>Week 3-4: Pushed drops</strong>. Same ledge, but now <strong>push the bars forward</strong> as the front wheel goes over the edge. This levels the bike out for the landing.</li>
+        <li><strong>Week 5+: Committed drops</strong>. A small ledge with a flat landing — the size you, the coach, judge appropriate for this rider on this day. Same technique — attack position before, push the bars forward, both wheels land together. Brief airtime.</li>
+        <li><strong>Coach's judgment is the rule, not a height number.</strong> Every kid, every bike, every day is different. If you're not sure, smaller.</li>
+        <li><strong>Every session:</strong> if you're confident on the feature, demo it. If you're not, don't fake it — walk it with them and discuss the technique instead. A coach who fakes a demo and crashes is worse than no demo.</li>
+        <li>Walk the drop with them. Discuss the takeoff, the landing, the speed needed.</li>
+        <li>One rider at a time. The rest watch. No pressure.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Locked into attack position well before the drop</li>
+      <li>Eyes at the landing, not the edge</li>
+      <li>Bars push forward as front wheel goes off the edge</li>
+      <li>Bike levels out in the air</li>
+      <li>Both wheels land at the same time</li>
+      <li>Rides away smooth, accelerating</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Front wheel drops first, slams</strong> — no push, bike nose-dives. Cue: <em>"Push the bars forward as you go off. Level the bike."</em></li>
+      <li><strong>Rear wheel slams first</strong> — pulled the bars too hard, over-corrected. Cue: <em>"Just push, don't pull. Match the angle."</em></li>
+      <li><strong>Brakes locked through the drop</strong> — kills the speed needed to clear it cleanly. Cue: <em>"Brakes off through the drop. Speed is your friend here."</em></li>
+      <li><strong>Sits down right before the drop</strong> — fear response. Cue: <em>"Stay in attack. Sitting down is what makes it scary."</em></li>
+      <li><strong>Stops at the edge</strong> — totally fine. Don't push. Walk it down with him. Try again next session with a smaller drop.</li>
+      <li><strong>Sends one way bigger than he should</strong> — boys this age will try to one-up each other on drops. <strong>Stop it immediately.</strong> Bigger drops have huge consequences. The progression matters.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid is scared of a drop, <strong>don't push him to ride it.</strong> Drops are 80% mental at this age. Have him roll smaller drops for two more weeks. Confidence builds session by session. The kid who's afraid of a 6-inch drop at week 4 might be sending an 8-inch drop at week 8 — but only if he gets there on his own timeline. Forcing creates riders who hate drops. Patience creates riders who love them.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="08"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Bunny Hop</span></button>
+      <button class="nav-btn next" data-go="10"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Pumping for Speed →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 10: PUMPING FOR SPEED -->
+  <article class="card" data-card="10">
+    <div class="card-eyebrow">Card 10 · Generating Speed</div>
+    <h1 class="card-title"><em>Pumping</em> for speed</h1>
+
+    <p class="card-lede">Pumping rollers, berms, and even small rocks. Generating measurable acceleration without pedaling. The skill that makes flow trails feel like magic.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>At Beginner, pumping was an introduction — "can you make the bike accelerate?" At Intermediate, pumping becomes a real tool. They pump rollers for free speed between features. They pump berms to come out faster than they went in. They use the rhythm of pumping to ride flow trails fluently. This is the skill that makes XC riding efficient — and makes pump tracks dangerously addictive.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Push down the back. Light over the top. Pull up the face.</p>
+
+    <h2 class="section-label">The drill — Pump Track Speed Test</h2>
+    <div class="drill">
+      <ul>
+        <li>Pump track is the perfect environment. Use it.</li>
+        <li><strong>The full pump cycle:</strong>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Up the face of a roller:</strong> pull up gently — let the bike come up to you, body lifts</li>
+            <li><strong>Over the top:</strong> light, almost weightless — body goes with the bike</li>
+            <li><strong>Down the back:</strong> push down hard — drive the bike into the dirt</li>
+            <li><strong>Repeat</strong> for the next roller</li>
+          </ul>
+        </li>
+        <li><strong>The speed test:</strong> "Can you do a full lap of the pump track <strong>without pedaling</strong>? Now can you do it <strong>faster than your last lap</strong>?"</li>
+        <li>Time their laps. Boys this age will get obsessive about lap times. Use it.</li>
+        <li><strong>Demo it yourself.</strong> A coach who can rip a pump track lap is way more compelling than one who can't.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Visible push-pull rhythm — body actively working with the terrain</li>
+      <li>Bike accelerating between rollers without pedaling</li>
+      <li>Smooth, flowing — not jerky</li>
+      <li>Eyes scanning ahead to the next roller</li>
+      <li>Faster lap times week over week</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Bobbing without timing</strong> — body going up and down but not synced to the rollers. Cue: <em>"Push DOWN the back of the bump. Not just up and down."</em></li>
+      <li><strong>Pedals through the lap</strong> — defeats the drill. Cue: <em>"No pedaling. Let the terrain do the work."</em></li>
+      <li><strong>Locks arms and legs</strong> — stiff = no pump. Cue: <em>"Loose. Bend everything. Like a spring."</em></li>
+      <li><strong>Looks at the front wheel</strong> — can't anticipate the next roller. Cue: <em>"Eyes 2 rollers ahead."</em></li>
+      <li><strong>Tries to manual through the rollers</strong> — different skill. Cue: <em>"Both wheels on the ground. We're pumping, not manualing."</em></li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid can't get the rhythm, simplify. Find a single roller. Have him approach it slowly, just one roller, and focus on <strong>only the push-down motion</strong> on the back side. Forget the rest. Once he feels that one push generate speed, add a second roller. Then a third. The full pump-track lap is just one push-down strung together many times. <strong>One good push is the whole skill in miniature.</strong></p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="09"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Small Drops</span></button>
+      <button class="nav-btn next" data-go="11"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Tabletops →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 11: TABLETOPS -->
+  <article class="card" data-card="11">
+    <div class="card-eyebrow">Card 11 · Real Jumps</div>
+    <h1 class="card-title">Small <em>tabletops</em></h1>
+
+    <p class="card-lede">The first real jump. A takeoff, a flat top, a landing. Rollable first — both wheels stay on the ground. Then airborne. The skill that turns kids into jumpers.</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Tabletops are the safest jump to learn on — if you don't clear them, you just land on the flat top. No huck-to-flat consequences like with doubles. At this age (8-11), small rollable tabletops are appropriate. Anything bigger gets saved for Advanced. <strong>The hierarchy is: roll the tabletop, then float over it, then clear it.</strong> Don't skip steps. Don't let boys send the gap before they can roll it.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Attack position, level pedals, eyes at the landing. Let it happen.</p>
+
+    <h2 class="section-label">The drill — Tabletop Progression</h2>
+    <div class="drill">
+      <ul>
+        <li>Find a small tabletop appropriate for this rider — the coach decides. Some pump tracks have these. If yours doesn't, find one at a local bike park. Smaller is always the right call when in doubt.</li>
+        <li><strong>Phase 1: Roll it.</strong> Approach in attack position. Roll up the takeoff, across the flat, down the landing. Both wheels stay on the ground the whole time. Do this 10-15 times before adding airtime.</li>
+        <li><strong>Phase 2: Float it.</strong> Add a tiny bit of speed. The bike will start to get light over the top — let it. Don't try to jump. Just feel the bike unweight.</li>
+        <li><strong>Phase 3: Send it.</strong> Add more speed. The bike leaves the ground briefly. Land smoothly on the downslope (not the flat top — that's huck-to-flat). Both wheels together.</li>
+        <li>If you're confident on the tabletop, demo every phase. If you're not, don't fake it — walk it with them and discuss the technique instead.</li>
+        <li>One at a time. No racing, no pressure.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Phase 1 looks bored — they can roll the tabletop without thinking</li>
+      <li>Phase 2 has visible unweight over the top — bike gets light</li>
+      <li>Phase 3 has clean airtime — both wheels off, landing on the downslope</li>
+      <li>Eyes at the landing the whole time</li>
+      <li>Attack position locked in</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Pulls up on the bars at takeoff</strong> — bike rotates backward in the air. Cue: <em>"Don't pull. Just stay in attack and let the takeoff do the work."</em></li>
+      <li><strong>Pushes down at takeoff</strong> — bike nose-dives. Cue: <em>"Neutral over the takeoff. Don't push or pull."</em></li>
+      <li><strong>Lands on the flat top</strong> — not enough speed. Cue: <em>"Either you have the speed to clear it, or you roll it. No in-between."</em></li>
+      <li><strong>Lands front wheel first</strong> — body weight too far forward in the air. Cue: <em>"Stay centered. Match the bike to the landing angle."</em></li>
+      <li><strong>Wants to send before he can roll it</strong> — common boys-this-age move. <strong>Don't allow it.</strong> "Roll it 10 times cleanly first. Then we add speed."</li>
+      <li><strong>Crashes on landing and gets mad</strong> — bad landings happen. Don't shame. Let him cool off, walk through what happened, try again or move on.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid can't get past Phase 1 (rolling the tabletop), check his attack position and speed. Most "I can't jump" is actually "I'm not in attack position" or "I'm slowing down before the takeoff." Run him through Card 01 again, then add speed. The bike does most of the jump on a tabletop — the rider's job is just to stay in good position and let the geometry work.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="10"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Pumping for Speed</span></button>
+      <button class="nav-btn next" data-go="12"><span class="nav-btn-label">Next</span><span class="nav-btn-title">Line Choice →</span></button>
+    </div>
+  </article>
+
+  <!-- CARD 12: LINE CHOICE -->
+  <article class="card" data-card="12">
+    <div class="card-eyebrow">Card 12 · Putting It Together</div>
+    <h1 class="card-title">Trail riding & <em>line choice</em></h1>
+
+    <p class="card-lede">Real singletrack at trail pace. A/B line decisions in real time. Reading terrain 15-20 feet ahead. Riding with the group at speed. The skill that takes them from "drill rider" to "trail rider."</p>
+
+    <h2 class="section-label">Why it matters</h2>
+    <p>Every other card in this deck is a skill in isolation. This is where it all integrates. On a real trail, a kid has to corner, climb, descend, pump, and read terrain simultaneously — all while keeping pace with the group. Line choice is the meta-skill: <em>seeing the multiple options through a section and picking the right one.</em> By the end of Intermediate, they should be choosing lines, not just reacting to what shows up.</p>
+
+    <h2 class="section-label">The cue</h2>
+    <p class="cue">Eyes 15 feet ahead. Pick your line. Commit.</p>
+
+    <h2 class="section-label">The drill — A/B Line Practice</h2>
+    <div class="drill">
+      <ul>
+        <li>Pick a section of trail with multiple possible lines — a rock garden, a chunky section, a corner with an inside or outside option.</li>
+        <li><strong>Walk it with the group.</strong> Identify the lines. Discuss the pros and cons of each.</li>
+        <li><strong>Ride it three times</strong>, each rider:
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Run 1:</strong> A line (the easier one)</li>
+            <li><strong>Run 2:</strong> B line (the harder/faster one)</li>
+            <li><strong>Run 3:</strong> rider's choice — and explain why after</li>
+          </ul>
+        </li>
+        <li>Build to: "Now ride a 5-minute section of trail. Tell me at the bottom what choices you made and why."</li>
+        <li><strong>Demo every line yourself first.</strong> They learn line choice by watching better riders make it.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-label">What success looks like</h2>
+    <ul class="bullets">
+      <li>Eyes scanning ahead, not reacting</li>
+      <li>Can describe their line choice after the run</li>
+      <li>Picks different lines depending on conditions (speed, group, terrain)</li>
+      <li>Maintains attack position throughout</li>
+      <li>Rides with the group at pace — not at the back, not crashing into others</li>
+    </ul>
+
+    <h2 class="section-label">What failure looks like</h2>
+    <ul class="bullets">
+      <li><strong>Always picks the easy line</strong> — fine early on, but should be challenging themselves by week 6. Cue: <em>"Try the harder line. We'll all wait. No pressure."</em></li>
+      <li><strong>Always picks the hard line to show off</strong> — sometimes the easy line is correct. Cue: <em>"The right line depends on the situation. Read the trail before you commit."</em></li>
+      <li><strong>Can't explain why they picked a line</strong> — they're still reacting, not choosing. Have them slow down and pre-walk more sections.</li>
+      <li><strong>Eyes locked on front wheel during trail riding</strong> — regression under load. Cue: <em>"Look up. Way up. Where do you want to be in 3 seconds?"</em></li>
+      <li><strong>Crashes into other riders</strong> — spacing breakdown. Re-run group riding rules from Beginner Card 12.</li>
+    </ul>
+
+    <div class="if-stuck">
+      <h2 class="section-label">If stuck</h2>
+      <p>If a kid can't seem to pick lines well, slow everything down. Walk more trail sections together. Stop at features and discuss the options out loud — "if you come into this with speed, you take the outside; if you're tight, take the inside." <strong>Line choice is a thinking skill before it's a riding skill.</strong> Once they're thinking about lines off the bike, they'll start thinking about them on the bike. The body follows the mind.</p>
+    </div>
+
+    <div class="card-nav">
+      <button class="nav-btn prev" data-go="11"><span class="nav-btn-label">Previous</span><span class="nav-btn-title">← Tabletops</span></button>
+      <button class="nav-btn next" disabled><span class="nav-btn-label">End</span><span class="nav-btn-title">—</span></button>
+    </div>
+  </article>
+
+</main>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  var cards = document.querySelectorAll('.card');
+
+  function activate(num) {
+    var n = String(num).padStart(2, '0');
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-card') === n;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+    cards.forEach(function (c) {
+      c.classList.toggle('active', c.getAttribute('data-card') === n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      activate(tab.getAttribute('data-card'));
+    });
+  });
+
+  document.querySelectorAll('.nav-btn[data-go]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activate(btn.getAttribute('data-go'));
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    var active = document.querySelector('.tab[aria-selected="true"]');
+    if (!active) return;
+    var n = parseInt(active.getAttribute('data-card'), 10);
+    if (e.key === 'ArrowRight' && n < 12) { e.preventDefault(); activate(n + 1); }
+    if (e.key === 'ArrowLeft' && n > 1) { e.preventDefault(); activate(n - 1); }
+  });
+})();
+</script>
+
+</body>
+</html>

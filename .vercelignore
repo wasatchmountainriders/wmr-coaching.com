@@ -1,0 +1,7 @@
+# Project docs and metadata — not for public deployment
+CLAUDE.md
+**/*.md
+.DS_Store
+**/.DS_Store
+.git
+.gitignore
